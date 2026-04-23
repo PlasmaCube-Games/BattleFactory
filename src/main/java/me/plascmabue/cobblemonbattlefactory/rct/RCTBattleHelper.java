@@ -59,10 +59,26 @@ public final class RCTBattleHelper {
             usedPresets.add(preset.uuid());
             Pokemon p = preset.getPokemon();
             if (p == null) continue;
+            stripGimmicks(p);
             out.add(p);
         }
         if (out.isEmpty()) return null;
         return out.toArray(new Pokemon[0]);
+    }
+
+    /**
+     * Disable dynamax / G-max by zeroing dmaxLevel, and remove the held item so
+     * mega stones / Z-crystals / dynamax band triggers can't fire. Called on every
+     * NPC pokemon built by buildNpcTeam — matches the user's request to disable
+     * gimmicks in BattleFactory content (PSL keeps them on).
+     */
+    private static void stripGimmicks(Pokemon p) {
+        try {
+            p.setDmaxLevel(0);
+            p.setHeldItem$common(net.minecraft.world.item.ItemStack.EMPTY);
+        } catch (Throwable t) {
+            BattleFactory.LOGGER.debug("[BattleFactory] stripGimmicks failed (non-fatal): {}", t.getMessage());
+        }
     }
 
     /**
