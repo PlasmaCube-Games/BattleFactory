@@ -58,6 +58,7 @@ dependencies {
     modImplementation("net.fabricmc.fabric-api:fabric-api:${project.properties["fabric_version"]}")
 
     modImplementation("maven.modrinth:cobblemon:${project.properties["cobblemon_version"]}")
+    modImplementation("maven.modrinth:rctapi:${project.properties["rctapi_version"]}")
 
     modImplementation(include("eu.pb4:sgui:${project.properties["sgui_version"]}")!!)
     modImplementation(include("net.kyori:adventure-platform-fabric:${project.properties["adventure_platform_version"]}")!!)
