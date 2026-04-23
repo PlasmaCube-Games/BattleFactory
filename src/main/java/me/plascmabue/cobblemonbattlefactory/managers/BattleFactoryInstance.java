@@ -310,6 +310,38 @@ public class BattleFactoryInstance {
     }
 
     public void startBattle() {
+        int desiredCount = Math.max(1, this.bf.config().numberOfPokemonRented);
+        Pokemon[] npcTeam = me.plascmabue.cobblemonbattlefactory.rct.RCTBattleHelper.buildNpcTeam(this.currentTier, desiredCount);
+        if (npcTeam == null || npcTeam.length == 0) {
+            BattleFactory.LOGGER.warn("[BattleFactory] RCT: failed to build NPC team — falling back to vanilla pvn.");
+            fallbackStartBattle();
+            return;
+        }
+        Pokemon[] rentals = new Pokemon[(int) this.rentalParty.size()];
+        int i = 0;
+        for (Pokemon p : this.rentalParty) {
+            if (p == null) continue;
+            if (i >= rentals.length) break;
+            rentals[i++] = p;
+        }
+        if (i == 0) {
+            BattleFactory.LOGGER.warn("[BattleFactory] RCT: rentalParty is empty — falling back to vanilla pvn.");
+            fallbackStartBattle();
+            return;
+        }
+        Pokemon[] rentalsTrimmed = i == rentals.length ? rentals : java.util.Arrays.copyOf(rentals, i);
+        java.util.UUID battleId = me.plascmabue.cobblemonbattlefactory.rct.RCTBattleHelper.startRentalBattle(
+                this.challenger, rentalsTrimmed, this.currentNPC, npcTeam,
+                this.currentTier.tierName());
+        if (battleId == null) {
+            BattleFactory.LOGGER.warn("[BattleFactory] RCT startBattle returned null — falling back to vanilla pvn.");
+            fallbackStartBattle();
+            return;
+        }
+        this.currentBattleID = battleId;
+    }
+
+    private void fallbackStartBattle() {
         BattleStartResult result = BattleBuilder.INSTANCE.pvn(this.challenger, this.currentNPC, null, BattleFormat.Companion.getGEN_9_SINGLES(), false, true, this.rentalParty);
         result.ifSuccessful(battle -> {
             this.currentBattleID = battle.getBattleId();

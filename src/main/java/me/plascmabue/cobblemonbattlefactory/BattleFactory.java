@@ -54,10 +54,11 @@ import org.slf4j.LoggerFactory;
 
 public class BattleFactory
 implements ModInitializer {
-    private static final String MOD_ID = "cobblemonbattlefactory";
+    public static final String MOD_ID = "cobblemonbattlefactory";
     public static final Logger LOGGER = LoggerFactory.getLogger((String)"cobblemonbattlefactory");
     public static boolean DEBUG = false;
     public static BattleFactory INSTANCE;
+    private com.gitlab.srcmc.rctapi.api.RCTApi rct;
     private MinecraftServer server;
     private FabricServerAudiences audience;
     private Config config;
@@ -77,12 +78,16 @@ implements ModInitializer {
 
     public void onInitialize() {
         INSTANCE = this;
+        this.rct = com.gitlab.srcmc.rctapi.api.RCTApi.initInstance(MOD_ID);
+        LOGGER.info("[BattleFactory] RCTApi instance initialized for mod id {}", MOD_ID);
         PayloadTypeRegistry.playS2C().register(BattleFactoryHudPayload.TYPE, BattleFactoryHudPayload.STREAM_CODEC);
         new BattleFactoryCommands();
         new me.plascmabue.cobblemonbattlefactory.commands.SetLocationCommand();
         ServerLifecycleEvents.SERVER_STARTED.register(server -> {
             this.server = server;
             this.audience = FabricServerAudiences.of((MinecraftServer)server);
+            this.rct.getTrainerRegistry().init(server);
+            LOGGER.info("[BattleFactory] RCT TrainerRegistry initialized.");
             me.plascmabue.cobblemonbattlefactory.utils.ConfigBootstrap.ensureDefaults();
             this.reload(false);
             LOGGER.info("[BattleFactory] Loaded {} tier(s) from config", this.config != null ? this.config.tiers.size() : 0);
@@ -106,6 +111,11 @@ implements ModInitializer {
             }
             PlayerData data = PlayerDataManager.loadPlayerData(player);
             this.updatePlayerData(player, data);
+            try {
+                this.rct.getTrainerRegistry().registerPlayer(player.getUUID().toString(), player);
+            } catch (Exception ex) {
+                LOGGER.warn("[BattleFactory] Failed to register RCT player trainer for {}: {}", player.getScoreboardName(), ex.getMessage());
+            }
         });
         ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> {
             ServerPlayer player = handler.getPlayer();
@@ -114,6 +124,11 @@ implements ModInitializer {
             this.playerData.remove(player.getUUID());
             if (!this.config.tickOfflinePlayerCooldowns) {
                 this.playerCooldowns.remove(player.getUUID());
+            }
+            try {
+                this.rct.getTrainerRegistry().unregisterById(player.getUUID().toString());
+            } catch (Exception ex) {
+                LOGGER.warn("[BattleFactory] Failed to unregister RCT player trainer for {}: {}", player.getScoreboardName(), ex.getMessage());
             }
         });
         ServerLifecycleEvents.SERVER_STOPPING.register(server -> {
@@ -214,6 +229,10 @@ implements ModInitializer {
 
     public MinecraftServer server() {
         return this.server;
+    }
+
+    public com.gitlab.srcmc.rctapi.api.RCTApi rct() {
+        return this.rct;
     }
 
     public FabricServerAudiences audience() {
