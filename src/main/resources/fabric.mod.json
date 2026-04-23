@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "${id}",
+  "version": "${version}",
+  "name": "CobblemonBattleFactory",
+  "description": "Battle Factory Mod for Cobblemon 1.7.3",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.plascmabue.cobblemonbattlefactory.BattleFactory"
+    ]
+  },
+  "mixins": [
+    "cobblemonbattlefactory.mixins.json",
+    {
+      "config": "cobblemonbattlefactory.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "fabric-api": "*",
+    "fabric-language-kotlin": "*",
+    "minecraft": "~1.21.1",
+    "cobblemon": ">=1.7.3"
+  }
+}

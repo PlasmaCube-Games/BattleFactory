@@ -1,0 +1,581 @@
+{
+  "example_random_pool": {
+    "type": "random",
+    "level_range": {
+      "min": 50,
+      "max": 75
+    },
+    "blacklist": {
+      "species": [],
+      "forms": [],
+      "abilities": [],
+      "moves": []
+    }
+  },
+  "example_set_pool": {
+    "type": "set",
+    "pokemon": [
+      {
+        "weight": 1,
+        "pokemon_preset": "arcanine_preset_1"
+      },
+      {
+        "weight": 1,
+        "pokemon": {
+          "species": "vaporeon",
+          "level_range": {
+            "min": 50,
+            "max": 75
+          },
+          "species_features": "",
+          "possible_genders": [
+            {
+              "weight": 1,
+              "gender": "female"
+            }
+          ],
+          "possible_abilities": [
+            {
+              "weight": 1,
+              "ability": "waterabsorb"
+            }
+          ],
+          "possible_natures": [
+            {
+              "weight": 1,
+              "nature": "bold"
+            }
+          ],
+          "known_moves": [
+            "lastresort",
+            "hydropump",
+            "acidarmor",
+            "muddywater",
+            "bubble"
+          ],
+          "possible_items": [
+            {
+              "weight": 1,
+              "item": "cobblemon:mystic_water",
+              "item_name": "",
+              "item_lore": "",
+              "item_data": {}
+            }
+          ],
+          "ivs": "31,31,31,31,31,31",
+          "evs": "252,252,0,0,4,0"
+        }
+      }
+    ]
+  },
+  "easy_pool": {
+    "type": "set",
+    "pokemon": [
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0001_electabuzz"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0002_scyther"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0003_kricketune"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0004_sunflora"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0005_wishiwashi"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0006_watchog"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0007_magmar"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0008_persian"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0009_tangela"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0010_primeape"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0011_piloswine"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0012_wigglytuff"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0013_corsola"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0014_farfetchd"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0015_butterfree"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0016_pidgeot"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0017_mightyena"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0018_stantler"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0019_electrode"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0020_meganium"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0021_parasect"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0022_thievul"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0023_beedrill"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0024_girafarig"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0025_furret"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0026_magneton"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0027_ariados"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0028_chimecho"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0029_pachirisu"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0030_misdreavus"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0031_seadra"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0032_delibird"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0033_dewgong"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0034_luvdisc"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0035_doublade"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0036_ledian"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "easy_0037_minun"
+      }
+    ]
+  },
+  "hard_pool": {
+    "type": "set",
+    "pokemon": [
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0001_swanna"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0002_cryogonal"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0003_chatot"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0004_smeargle"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0005_ninjask"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0006_liepard"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0007_vivillon"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0008_kingler"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0009_kecleon"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0010_vigoroth"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0011_unfezant"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0012_qwilfish"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0013_sandslash"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0014_mawile"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0015_morpeko"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0016_bibarel"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0017_spinda"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0018_shiftry"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0019_boltund"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0020_emolga"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0021_cacturne"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0022_linoone_galarian"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0023_linoone"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0024_fearow"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0025_gligar"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0026_golem"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0027_leafeon"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0028_solrock"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0029_sudowoodo"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0030_victreebel"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0031_sawsbuck"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0032_xatu"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0033_tauros"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0034_bisharp"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0035_whiscash"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0036_plusle"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0037_ursaring"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0038_toucannon"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0039_camerupt"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0040_lanturn"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0041_electrode_hisuian"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0042_raichu"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0043_rapidash_galarian"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0044_rapidash"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0045_golduck"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0046_kangaskhan"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0047_marowak"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0048_magcargo"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0049_roselia"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0050_sceptile"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0051_lunatone"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0052_machamp"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0053_lumineon"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0054_mrmime_galarian"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0055_stoutland"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0056_vibrava"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0057_komala"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0058_porygon2"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0059_bouffalant"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0060_glaceon"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0061_lapras"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0062_lickilicky"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0063_lopunny"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0064_noctowl"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0065_bellossom"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0066_muk"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0067_sableye"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0068_maractus"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0069_hitmonchan"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0070_hypno"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0071_carnivine"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0072_gourgeist"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0073_mrmime"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0074_volbeat"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0075_tropius"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0076_walrein"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0077_musharna"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0078_masquerain"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0079_vespiquen"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0080_chansey"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0081_eldegoss"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0082_pyukumuku"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0083_carbink"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0084_raticate_alolan"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0085_mantine"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0086_granbull"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0087_absol"
+      },
+      {
+        "weight": 1,
+        "pokemon_preset": "hard_0088_dusclops"
+      }
+    ]
+  }
+}

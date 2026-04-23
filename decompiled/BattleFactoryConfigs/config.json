@@ -1,0 +1,148 @@
+{
+  "debug": false,
+  "hide_irrelevant_entities": true,
+  "max_distance_from_battle": 15,
+  "max_leaderboard_players": 100,
+  "swap_pokemon_after_each_battle": true,
+  "force_pokemon_swap": true,
+  "new_team_at_tier_increase": true,
+  "force_team_swap": true,
+  "number_of_pokemon_rented": 3,
+  "number_of_pokemon_available": 6,
+  "allow_tier_selection": true,
+  "max_tier_select_is_highest_streak": true,
+  "give_rewards_at_end": true,
+  "repeat_final_tier": true,
+  "tick_offline_player_cooldowns": true,
+  "banned_bag_items": [],
+  "banned_key_items": [
+    "cobblemon:key_stone",
+    "cobblemon:tera_orb",
+    "cobblemon:z_ring",
+    "cobblemon:dynamax_band"
+  ],
+  "tiers": {
+    "easy": {
+      "display_name": "Easy",
+      "display_item": "minecraft:lime_wool",
+      "battles_for_next_tier": 2,
+      "battle_locations": {
+        "1": {
+          "world": "minecraft:overworld",
+          "player_location": {
+            "x": -182.5,
+            "y": -60,
+            "z": 326.5,
+            "yRot": 90,
+            "xRot": 0
+          },
+          "npc_location": {
+            "x": -195.5,
+            "y": -60,
+            "z": 326.5
+          }
+        },
+        "2": {
+          "world": "minecraft:overworld",
+          "player_location": {
+            "x": -182.5,
+            "y": -32,
+            "z": 326.5,
+            "yRot": 90,
+            "xRot": 0
+          },
+          "npc_location": {
+            "x": -195.5,
+            "y": -32,
+            "z": 326.5
+          }
+        }
+      },
+      "possible_npcs": [
+        {
+          "weight": 1,
+          "npc_id": "cobblemon:bf_npc_easy"
+        }
+      ],
+      "possible_rental_pools": [
+        {
+          "weight": 1,
+          "rental_pool": "example_set_pool"
+        }
+      ],
+      "per_battle_rewards": {},
+      "tier_completion_rewards": {},
+      "has_bonus_encounter": false,
+      "bonus_encounter_settings": {
+        "bonus_encounter_npc": "cobblemon:bf_bonus_easy",
+        "bonus_encounter_location": {
+          "world": "minecraft:overworld",
+          "player_location": {
+            "x": -182.5,
+            "y": -32,
+            "z": 326.5,
+            "yRot": 90,
+            "xRot": 0
+          },
+          "npc_location": {
+            "x": -195.5,
+            "y": -32,
+            "z": 326.5
+          }
+        },
+        "bonus_encounter_rewards": {
+          "allow_duplicates": true,
+          "rolls": {
+            "min": 1,
+            "max": 5
+          },
+          "reward_pools": [
+            {
+              "weight": 1,
+              "pool_preset": "bonus_pool_easy"
+            },
+            {
+              "weight": 1,
+              "pool": {
+                "allow_duplicates": true,
+                "rolls": {
+                  "min": 1,
+                  "max": 5
+                },
+                "rewards": [
+                  {
+                    "weight": 1,
+                    "reward_preset": "bonus_reward_easy"
+                  },
+                  {
+                    "weight": 1,
+                    "reward": {
+                      "type": "command",
+                      "commands": [
+                        "say %player% has defeated the %tier% bonus encounter!"
+                      ]
+                    }
+                  },
+                  {
+                    "weight": 1,
+                    "reward": {
+                      "type": "item",
+                      "item": "minecraft:diamond",
+                      "item_name": "",
+                      "item_lore": [],
+                      "item_data": {},
+                      "count": {
+                        "min": 1,
+                        "max": 4
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

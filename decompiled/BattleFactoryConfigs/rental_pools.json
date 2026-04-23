@@ -1,0 +1,71 @@
+{
+  "example_random_pool": {
+    "type": "random",
+    "level_range": {
+      "min": 50,
+      "max": 75
+    },
+    "blacklist": {
+      "species": [],
+      "forms": [],
+      "abilities": [],
+      "moves": []
+    }
+  },
+  "example_set_pool": {
+    "type": "set",
+    "pokemon": [
+      {
+        "weight": 1,
+        "pokemon_preset": "arcanine_preset_1"
+      },
+      {
+        "weight": 1,
+        "pokemon": {
+          "species": "vaporeon",
+          "level_range": {
+            "min": 50,
+            "max": 75
+          },
+          "species_features": "",
+          "possible_genders": [
+            {
+              "weight": 1,
+              "gender": "female"
+            }
+          ],
+          "possible_abilities": [
+            {
+              "weight": 1,
+              "ability": "waterabsorb"
+            }
+          ],
+          "possible_natures": [
+            {
+              "weight": 1,
+              "nature": "bold"
+            }
+          ],
+          "known_moves": [
+            "lastresort",
+            "hydropump",
+            "acidarmor",
+            "muddywater",
+            "bubble"
+          ],
+          "possible_items": [
+            {
+              "weight": 1,
+              "item": "cobblemon:mystic_water",
+              "item_name": "",
+              "item_lore": "",
+              "item_data": {}
+            }
+          ],
+          "ivs": "31,31,31,31,31,31",
+          "evs": "252,252,0,0,4,0"
+        }
+      }
+    ]
+  }
+}

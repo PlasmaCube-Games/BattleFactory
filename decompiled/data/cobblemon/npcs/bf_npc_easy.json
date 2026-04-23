@@ -1,0 +1,874 @@
+{
+  "resourceIdentifier": "cobblemon:standard",
+  "names": [
+    "Battle Factory NPC"
+  ],
+  "hitbox": "player",
+  "canDespawn": false,
+  "isInvulnerable": true,
+  "isLeashable": false,
+  "allowProjectileHits": false,
+  "battleConfiguration": {
+    "canChallenge": true
+  },
+  "autoHealParty": true,
+  "ai": [
+    {
+      "type": "apply_behaviours",
+      "behaviours": [
+        "cobblemon:looking",
+        "cobblemon:looks_in_one_direction",
+        "cobblemon:battler"
+      ]
+    }
+  ],
+  "skill": 5,
+  "party": {
+    "type": "pool",
+    "minPokemon": 3,
+    "maxPokemon": 3,
+    "isStatic": false,
+    "pool": [
+      {
+        "pokemon": "venusaur uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "charizard uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "blastoise uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "raichu uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "raichu alolan uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "nidoking uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "nidoqueen uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "clefable uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "ninetales uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "ninetales alolan uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "vileplume uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "venomoth uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "dugtrio uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "dugtrio alolan uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "alakazam uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "machamp uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "victreebel uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "golem uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "rapidash uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "rapdiash galarian uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "slowbro uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "cloyster uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "gengar uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "electrode uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "electrode hisuian uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "marowak uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "marowak alolan uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "hitmonlee uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "hitmonchan uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "weezing uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "rhydon uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "starmie uncatchable=true level=5 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "flareon uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "vaporeon uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "jolteon uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "meganium uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "typhlosion uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "feraligatr uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "ampharos uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "quagsire uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "espeon uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "umbreon uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "slowking uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "forretress uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "steelix uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "granbull uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "magcargo uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "mantine uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "skarmory uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "kingdra uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "sceptile uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "blaziken uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "swampert uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "ludicolo uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "swellow uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "gardevoir uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "breloom uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "slaking uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "exploud uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "hariyama uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "aggron uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "wailord uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "camerupt uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "torkoal uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "flygon uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "claydol uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "gyarados uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "milotic uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "walrein uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "torterra uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "infernape uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "empoleon uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "staraptor uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "luxray uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "roserade uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "floatzel uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "gastrodon uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "ambipom uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "carnivine uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "lucario uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "hippowdon uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "lopunny uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "leafeon uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "glaceon uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "serperior uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "emboar uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "samurott uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "stoutland uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "gigalith uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "swoobat uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "conkeldurr uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "scolipede uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "whimsicott uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "lilligant uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "krookodile uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "darmanitan uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "scrafty uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "cofagrigus uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "sawsbuck uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "jellicent uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "ferrothorn uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "golurk uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "bouffalant uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "heatmor uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "durant uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "chesnaught uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "delphox uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "greninja uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "florges uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "aegislash uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "clawitzer uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "klefki uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "gourgeist uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "decidueye uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "incineroar uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "primarina uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "salazzle uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "mudsdale uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "shiinotic uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "bewear uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "mimikyu uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "dhelmise uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "rillaboom uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "cinderace uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "inteleon uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "corviknight uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "boltund uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "hatterene uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "grimmsnarl uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "obstagoon uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "stonjourner uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "copperajah uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "meowscarada uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "skeledirge uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "quaquaval uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "grafaiai uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "espathra uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "revavroom uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "flamigo uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      },
+      {
+        "pokemon": "cetitan uncatchable=true level=10 hp_iv=10 attack_iv=10 defence_iv=10 special_attack_iv=10 special_defence_iv=10 speed_iv=10",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "10"
+      }
+    ]
+  }
+}

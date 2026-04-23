@@ -1,0 +1,38 @@
+{
+  "title": "<gold>Choisis un niveau de difficulté",
+  "rows": 5,
+  "slots": [
+    "TTTTTTTTT",
+    "TTTTTTTTT",
+    "TTTTTTTTT",
+    "TTTTTTTTT",
+    "####C####"
+  ],
+  "background_item": {
+    "symbol": "#",
+    "item": "minecraft:air",
+    "item_name": "",
+    "item_lore": [],
+    "item_data": {}
+  },
+  "tier_item": {
+    "symbol": "T",
+    "item_name": "<gray>%tier%",
+    "item_lore": [
+      "<green>Clique pour démarrer la Battle Factory à ce niveau !"
+    ],
+    "item_data": {},
+    "unavailable_item": "minecraft:barrier",
+    "unavailable_lore": [
+      "<red>Indisponible !"
+    ],
+    "unavailable_data": {}
+  },
+  "cancel_item": {
+    "symbol": "C",
+    "item": "minecraft:red_concrete",
+    "item_name": "<red>Annuler",
+    "item_lore": [],
+    "item_data": {}
+  }
+}

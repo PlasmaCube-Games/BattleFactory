@@ -1,0 +1,38 @@
+{
+  "title": "<gold>Select A Difficulty Tier",
+  "rows": 5,
+  "slots": [
+    "TTTTTTTTT",
+    "TTTTTTTTT",
+    "TTTTTTTTT",
+    "TTTTTTTTT",
+    "####C####"
+  ],
+  "background_item": {
+    "symbol": "#",
+    "item": "minecraft:air",
+    "item_name": "",
+    "item_lore": [],
+    "item_data": {}
+  },
+  "tier_item": {
+    "symbol": "T",
+    "item_name": "<gray>%tier%",
+    "item_lore": [
+      "<green>Click to start the Battle Factory at this tier!"
+    ],
+    "item_data": {},
+    "unavailable_item": "minecraft:barrier",
+    "unavailable_lore": [
+      "<red>Unavailable!"
+    ],
+    "unavailable_data": {}
+  },
+  "cancel_item": {
+    "symbol": "C",
+    "item": "minecraft:red_concrete",
+    "item_name": "<red>Cancel",
+    "item_lore": [],
+    "item_data": {}
+  }
+}

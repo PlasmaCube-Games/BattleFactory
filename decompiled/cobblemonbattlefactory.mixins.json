@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.unariginal.cobblemonbattlefactory.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "HideEntitiesMixin",
+    "PlayerDeathMixin",
+    "PreventDropsMixin",
+    "PreventHeldItems"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "CobblemonBattleFactory-refmap.json"
+}

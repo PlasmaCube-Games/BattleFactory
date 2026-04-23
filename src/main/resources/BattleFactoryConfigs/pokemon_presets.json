@@ -1,0 +1,4419 @@
+{
+  "arcanine_preset_1": {
+    "species": "arcanine",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "intimidate"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "adamant"
+      }
+    ],
+    "known_moves": [
+      "flareblitz",
+      "crunch",
+      "extremespeed",
+      "roar",
+      "flamethrower",
+      "judgement",
+      "leer",
+      "swordsdance"
+    ],
+    "possible_held_items": [
+      {
+        "weight": 1,
+        "item": "cobblemon:leftovers",
+        "item_name": "",
+        "item_lore": [],
+        "item_data": {}
+      }
+    ],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,4,0"
+  },
+  "easy_0001_electabuzz": {
+    "species": "electabuzz",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "static"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "thunderbolt",
+      "psychic",
+      "focusblast",
+      "hiddenpowerice"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,0,0,252,0,252"
+  },
+  "easy_0002_scyther": {
+    "species": "scyther",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "technician"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "swordsdance",
+      "bugbite",
+      "dualwingbeat",
+      "closecombat"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,252,0,0,0,252"
+  },
+  "easy_0003_kricketune": {
+    "species": "kricketune",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "technician"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "leechlife",
+      "aerialace",
+      "poweruppunch",
+      "trailblaze"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,0,4"
+  },
+  "easy_0004_sunflora": {
+    "species": "sunflora",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "chlorophyll"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "gigadrain",
+      "earthpower",
+      "dazzlinggleam",
+      "hiddenpowerfire"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,252,4,0"
+  },
+  "easy_0005_wishiwashi": {
+    "species": "wishiwashi",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "schooling"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "aquatail",
+      "earthquake",
+      "irontail",
+      "icebeam"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,0,4"
+  },
+  "easy_0006_watchog": {
+    "species": "watchog",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "analytic"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "hyperfang",
+      "crunch",
+      "firepunch",
+      "swordsdance"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,252,0,0,0,252"
+  },
+  "easy_0007_magmar": {
+    "species": "magmar",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "flamebody"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "flareblitz",
+      "thunderpunch",
+      "crosschop",
+      "poisonjab"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,252,0,0,0,252"
+  },
+  "easy_0008_persian": {
+    "species": "persian",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "technician"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "doubleedge",
+      "bite",
+      "aerialace",
+      "playrough"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,0,0,252"
+  },
+  "easy_0009_tangela": {
+    "species": "tangela",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "chlorophyll"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "gigadrain",
+      "ancientpower",
+      "synthesis",
+      "knockoff"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,4,252,0,0"
+  },
+  "easy_0010_primeape": {
+    "species": "primeape",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "defiant"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "bulkup",
+      "drainpunch",
+      "eearthquake",
+      "stoneedge"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,252,0,0,0,252"
+  },
+  "easy_0011_piloswine": {
+    "species": "piloswine",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "thickfat"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "earthquake",
+      "iciclecrash",
+      "toxic",
+      "stealthrock"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,252,0,0,0"
+  },
+  "easy_0012_wigglytuff": {
+    "species": "wigglytuff",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "competitive"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "alluringvoice",
+      "fireblast",
+      "hypervoice",
+      "stealthrock"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,4,252,0"
+  },
+  "easy_0013_corsola": {
+    "species": "corsola",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "hustle"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "scald",
+      "icebeam",
+      "earthpower",
+      "powergem"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,252,4,0"
+  },
+  "easy_0014_farfetchd": {
+    "species": "farfetchd",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "defiant"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "bravebird",
+      "doubleedge",
+      "firstimpression",
+      "leafblade"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,0,4"
+  },
+  "easy_0015_butterfree": {
+    "species": "butterfree",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "compoundeyes"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "gigadrain",
+      "bugbuzz",
+      "hurricane",
+      "quiverdance"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,252,0,4"
+  },
+  "easy_0016_pidgeot": {
+    "species": "pidgeot",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "keeneye"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "steelwing",
+      "bravebird",
+      "doubleedge",
+      "toxic"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,0,0,252"
+  },
+  "easy_0017_mightyena": {
+    "species": "mightyena",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "moxie"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "crunch",
+      "psychicfangs",
+      "icefang",
+      "firefang"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,0,4"
+  },
+  "easy_0018_stantler": {
+    "species": "stantler",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "intimidate"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "bodyslam",
+      "earthquake",
+      "suckerpunch",
+      "wildcharge"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,252,0,0,0,252"
+  },
+  "easy_0019_electrode": {
+    "species": "electrode",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "static"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "thunderbolt",
+      "hiddenpowerice",
+      "signalbeam",
+      "thunderwave"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,4,0,252"
+  },
+  "easy_0020_meganium": {
+    "species": "meganium",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "overgrow"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "petalblizzard",
+      "earthquake",
+      "zenheadbutt",
+      "swordsdance"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,0,0,252"
+  },
+  "easy_0021_parasect": {
+    "species": "parasect",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "dryskin"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "leechlife",
+      "seedbomb",
+      "swordsdance",
+      "throatchop"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,4,0"
+  },
+  "easy_0022_thievul": {
+    "species": "thievul",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "stakeout"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "darkpulse",
+      "grassknot",
+      "psychic",
+      "shadowball"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,4,0,252"
+  },
+  "easy_0023_beedrill": {
+    "species": "beedrill",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "sniper"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "xscissor",
+      "poisonjab",
+      "knockoff",
+      "drillrun"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,252,0,0,0,252"
+  },
+  "easy_0024_girafarig": {
+    "species": "girafarig",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "sapsipper"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "psychic",
+      "shadowball",
+      "dazzlinggleam",
+      "thunderbolt"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,4,0,252"
+  },
+  "easy_0025_furret": {
+    "species": "furret",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "keeneye"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "doubleedge",
+      "firepunch",
+      "suckerpunch",
+      "zenheadbutt"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,0,0,252"
+  },
+  "easy_0026_magneton": {
+    "species": "magneton",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "sturdy"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "thunderbolt",
+      "flashcannon",
+      "toxic",
+      "hiddenpowerice"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,0,0,252,0,252"
+  },
+  "easy_0027_ariados": {
+    "species": "ariados",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "sniper"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "leechlife",
+      "shadowsneak",
+      "poisonjab",
+      "stompingtantrum"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,0,4"
+  },
+  "easy_0028_chimecho": {
+    "species": "chimecho",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "levitate"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "dazzlinggleam",
+      "energyball",
+      "psychic",
+      "shadowball"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,252,0,4"
+  },
+  "easy_0029_pachirisu": {
+    "species": "pachirisu",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "voltabsorb"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "thunderbolt",
+      "superfang",
+      "grassknot",
+      "toxic"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,0,4,252"
+  },
+  "easy_0030_misdreavus": {
+    "species": "misdreavus",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "levitate"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "dazzlinggleam",
+      "shadowball",
+      "calmmind",
+      "willowisp"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,4,0,252"
+  },
+  "easy_0031_seadra": {
+    "species": "seadra",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "sniper"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "hydropump",
+      "icebeam",
+      "focusenergy",
+      "flashcannon"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,0,0,252,0,252"
+  },
+  "easy_0032_delibird": {
+    "species": "delibird",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "hustle"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "bravebird",
+      "tripleaxel",
+      "gunkshot",
+      "drillrun"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,0,0,252"
+  },
+  "easy_0033_dewgong": {
+    "species": "dewgong",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "thickfat"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "toxic",
+      "drillrun",
+      "liquidation",
+      "tripleaxel"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,4,0"
+  },
+  "easy_0034_luvdisc": {
+    "species": "luvdisc",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "swiftswim"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "surf",
+      "icebeam",
+      "drainingkiss",
+      "toxic"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,4,0,252"
+  },
+  "easy_0035_doublade": {
+    "species": "doublade",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "noguard"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "shadowsneak",
+      "gyroball",
+      "swordsdance",
+      "closecombat"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,252,252,0,0,0"
+  },
+  "easy_0036_ledian": {
+    "species": "ledian",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "swarm"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "airslash",
+      "bugbuzz",
+      "focusblast",
+      "gigadrain"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,0,0,0,252,252"
+  },
+  "easy_0037_minun": {
+    "species": "minun",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "voltabsorb"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "thunderbolt",
+      "signalbeam",
+      "grassknot",
+      "alluringvoice"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,4,0,252"
+  },
+  "hard_0001_swanna": {
+    "species": "swanna",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "hydration"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "scald",
+      "icebeam",
+      "hurricane",
+      "alluringvoice"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,4,0,252"
+  },
+  "hard_0002_cryogonal": {
+    "species": "cryogonal",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "levitate"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "icebeam",
+      "freezedry",
+      "flashcannon",
+      "rapidspin"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,0,0,0,252,252"
+  },
+  "hard_0003_chatot": {
+    "species": "chatot",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "keeneye"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "boomburst",
+      "heatwave",
+      "chatter",
+      "nastyplot"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,4,0,252"
+  },
+  "hard_0004_smeargle": {
+    "species": "smeargle",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "owntempo"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "stoneedge",
+      "ceaselessedge",
+      "stickyweb",
+      "nuzzle"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,0,0,252"
+  },
+  "hard_0005_ninjask": {
+    "species": "ninjask",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "speedboost"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "xscissor",
+      "dualwingbeat",
+      "nightslash",
+      "substitute"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,252,0,0,0,252"
+  },
+  "hard_0006_liepard": {
+    "species": "liepard",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "prankster"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "thunderwave",
+      "playrough",
+      "gunkshot",
+      "throatchop"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,252,0,0,0,252"
+  },
+  "hard_0007_vivillon": {
+    "species": "vivillon",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "compoundeyes"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "quiverdance",
+      "hurricane",
+      "bugbuzz",
+      "gigadrain"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,252,0,4"
+  },
+  "hard_0008_kingler": {
+    "species": "kingler",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "sheerforce"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "liquidation",
+      "hammerarm",
+      "rockslide",
+      "highhorsepower"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "0,252,4,0,0,252"
+  },
+  "hard_0009_kecleon": {
+    "species": "kecleon",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "protean"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "bodyslam",
+      "shadowsneak",
+      "rockslide",
+      "drainpunch"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,0,4"
+  },
+  "hard_0010_vigoroth": {
+    "species": "vigoroth",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "vitalspirit"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "bodyslam",
+      "earthquake",
+      "suckerpunch",
+      "trailblaze"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,0,0,252"
+  },
+  "hard_0011_unfezant": {
+    "species": "unfezant",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "superluck"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "nightslash",
+      "bravebird",
+      "quickattack",
+      "roost"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,252,0,0,0,252"
+  },
+  "hard_0012_qwilfish": {
+    "species": "qwilfish",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "intimidate"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "gunkshot",
+      "liquidation",
+      "haze",
+      "spikes"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,252,0,0,0,252"
+  },
+  "hard_0013_sandslash": {
+    "species": "sandslash",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "sandrush"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "stealthrock",
+      "earthquake",
+      "leechlife",
+      "rockslide"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,4,0,0,0"
+  },
+  "hard_0014_mawile": {
+    "species": "mawile",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "sheerforce"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "playrough",
+      "ironhead",
+      "icepunch",
+      "thunderpunch"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,4,0,0,0"
+  },
+  "hard_0015_morpeko": {
+    "species": "morpeko",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "aurawheel",
+      "icefang",
+      "stompingtantrum",
+      "rapidspin"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,252,0,0,0,252"
+  },
+  "hard_0016_bibarel": {
+    "species": "bibarel",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "simple"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "curse",
+      "aquatail",
+      "doubleedge",
+      "stompingtantrum"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,0,4"
+  },
+  "hard_0017_spinda": {
+    "species": "spinda",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "contrary"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "suckerpunch",
+      "bodyslam",
+      "superpower",
+      "wildcharge"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,0,0,252"
+  },
+  "hard_0018_shiftry": {
+    "species": "shiftry",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "windrider"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "swordsdance",
+      "leafblade",
+      "throatchop",
+      "rockslide"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,0,4"
+  },
+  "hard_0019_boltund": {
+    "species": "boltund",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "strongjaw"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "wildcharge",
+      "psychicfangs",
+      "playrough",
+      "flamecharge"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,0,0,252"
+  },
+  "hard_0020_emolga": {
+    "species": "emolga",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "motordrive"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "discharge",
+      "airslash",
+      "roost",
+      "energyball"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,4,0,252"
+  },
+  "hard_0021_cacturne": {
+    "species": "cacturne",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "waterabsorb"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "gigadrain",
+      "darkpulse",
+      "focusblast",
+      "shadowball"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,252,0,0"
+  },
+  "hard_0022_linoone_galarian": {
+    "species": "linoone",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "form=galarian",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "quickfeet"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "throatchop",
+      "stompingtantrum",
+      "bodyslam",
+      "gunkshot"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,0,0,252"
+  },
+  "hard_0023_linoone": {
+    "species": "linoone",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "gluttony"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "bellydrum",
+      "extremespeed",
+      "throatchop",
+      "stompingtantrum"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,0,0,252"
+  },
+  "hard_0024_fearow": {
+    "species": "fearow",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "sniper"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "doubleedge",
+      "drillpeck",
+      "drillrun",
+      "throatchop"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,252,0,0,0,252"
+  },
+  "hard_0025_gligar": {
+    "species": "gligar",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "immunity"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "roost",
+      "earthquake",
+      "dualwingbeat",
+      "stoneedge"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,0,0,252"
+  },
+  "hard_0026_golem": {
+    "species": "golem",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "sturdy"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "rockpolish",
+      "earthquake",
+      "stoneedge",
+      "superpower"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,4,0,0,0"
+  },
+  "hard_0027_leafeon": {
+    "species": "leafeon",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "chlorophyll"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "leafblade",
+      "doubleedge",
+      "xscissor",
+      "swordsdance"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "0,252,252,0,0,4"
+  },
+  "hard_0028_solrock": {
+    "species": "solrock",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "levitate"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "stoneedge",
+      "zenheadbutt",
+      "earthquake",
+      "flareblitz"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,4,0,0,0"
+  },
+  "hard_0029_sudowoodo": {
+    "species": "sudowoodo",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "rockhead"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "headsmash",
+      "earthquake",
+      "woodhammer",
+      "firepunch"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,4,0,0,0"
+  },
+  "hard_0030_victreebel": {
+    "species": "victreebel",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "chlorophyll"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "swordsdance",
+      "powerwhip",
+      "suckerpunch",
+      "poisonjab"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,0,4"
+  },
+  "hard_0031_sawsbuck": {
+    "species": "sawsbuck",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "sapsipper"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "bodyslam",
+      "hornleech",
+      "jumpkick",
+      "stompingtantrum"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,0,0,252"
+  },
+  "hard_0032_xatu": {
+    "species": "xatu",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "magicbounce"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "calmmind",
+      "airslash",
+      "heatwave",
+      "psyshock"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,0,0,252,0,252"
+  },
+  "hard_0033_tauros": {
+    "species": "tauros",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "sheerforce"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "bodyslam",
+      "earthquake",
+      "zenheadbutt",
+      "rockslide"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,252,0,0,0,252"
+  },
+  "hard_0034_bisharp": {
+    "species": "bisharp",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "defiant"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "psychocut",
+      "ironhead",
+      "brickbreak",
+      "throatchop"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,0,4"
+  },
+  "hard_0035_whiscash": {
+    "species": "whiscash",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "hydration"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "dragondance",
+      "earthquake",
+      "waterfall",
+      "rockslide"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,0,4"
+  },
+  "hard_0036_plusle": {
+    "species": "plusle",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "lightningrod"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "thunderbolt",
+      "grassknot",
+      "alluringvoice",
+      "signalbeam"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,0,0,252,0,252"
+  },
+  "hard_0037_ursaring": {
+    "species": "ursaring",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "quickfeet"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "doubleedge",
+      "superpower",
+      "firepunch",
+      "throatchop"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,0,4"
+  },
+  "hard_0038_toucannon": {
+    "species": "toucannon",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "skilllink"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "bulletseed",
+      "beakblast",
+      "rockblast",
+      "flamecharge"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,0,4"
+  },
+  "hard_0039_camerupt": {
+    "species": "camerupt",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "solidrock"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "earthpower",
+      "fireblast",
+      "ancientpower",
+      "flashcannon"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,252,4,0"
+  },
+  "hard_0040_lanturn": {
+    "species": "lanturn",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "voltabsorb"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "scald",
+      "thunderbolt",
+      "icebeam",
+      "dazzlinggleam"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,252,4,0"
+  },
+  "hard_0041_electrode_hisuian": {
+    "species": "electrode",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "form=hisuian",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "static"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "gigadrain",
+      "thunderbolt",
+      "foulplay",
+      "doubleedge"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,4,0,252"
+  },
+  "hard_0042_raichu": {
+    "species": "raichu",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "lightningrod"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "nastyplot",
+      "thunderbolt",
+      "surf",
+      "focusblast"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,0,0,252,0,252"
+  },
+  "hard_0043_rapidash_galarian": {
+    "species": "rapidash",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "form=galarian",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "pastelveil"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "swordsdance",
+      "playrough",
+      "psychocut",
+      "highhorsepower"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,252,0,0,0,252"
+  },
+  "hard_0044_rapidash": {
+    "species": "rapidash",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "flashfire"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "flareblitz",
+      "wildcharge",
+      "highhorsepower",
+      "playrough"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,252,0,0,0,252"
+  },
+  "hard_0045_golduck": {
+    "species": "golduck",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "swiftswim"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "scald",
+      "icebeam",
+      "psychicnoise",
+      "focusblast"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,252,0,4"
+  },
+  "hard_0046_kangaskhan": {
+    "species": "kangaskhan",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "scrappy"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "bodyslam",
+      "earthquake",
+      "drainpunch",
+      "crunch"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,0,0,252"
+  },
+  "hard_0047_marowak": {
+    "species": "marowak",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "battlearmor"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "earthquake",
+      "stoneedge",
+      "firepunch",
+      "lowkick"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,4,0,0,0"
+  },
+  "hard_0048_magcargo": {
+    "species": "magcargo",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "weakarmor"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "shellsmash",
+      "fireblast",
+      "earthpower",
+      "powergem"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,0,252,252,0,0"
+  },
+  "hard_0049_roselia": {
+    "species": "roselia",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "naturalcure"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "gigadrain",
+      "sludgebomb",
+      "dazzlinggleam",
+      "extrasensory"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,252,4,0"
+  },
+  "hard_0050_sceptile": {
+    "species": "sceptile",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "unburden"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "swordsdance",
+      "leafblade",
+      "earthquake",
+      "acrobatics"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,252,0,0,0,252"
+  },
+  "hard_0051_lunatone": {
+    "species": "lunatone",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "levitate"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "calmmind",
+      "powergem",
+      "psychic",
+      "earthpower"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,252,0,4"
+  },
+  "hard_0052_machamp": {
+    "species": "machamp",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "guts"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "closecombat",
+      "bulletpunch",
+      "earthquake",
+      "throatchop"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,4,0"
+  },
+  "hard_0053_lumineon": {
+    "species": "lumineon",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "stormdrain"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "scald",
+      "icebeam",
+      "airslash",
+      "alluringvoice"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,4,0,252"
+  },
+  "hard_0054_mrmime_galarian": {
+    "species": "mrmime",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "form=galarian",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "vitalspirit"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "icebeam",
+      "freezedry",
+      "psychic",
+      "focusblast"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,0,0,252,0,252"
+  },
+  "hard_0055_stoutland": {
+    "species": "stoutland",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "scrappy"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "facade",
+      "superpower",
+      "crunch",
+      "wildcharge"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,0,4"
+  },
+  "hard_0056_vibrava": {
+    "species": "vibrava",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "levitate"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "stealthrock",
+      "earthquake",
+      "roost",
+      "dragonclaw"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,0,252,0"
+  },
+  "hard_0057_komala": {
+    "species": "komala",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "comatose"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "bodyslam",
+      "earthquake",
+      "suckerpunch",
+      "woodhammer"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,0,4"
+  },
+  "hard_0058_porygon2": {
+    "species": "porygon2",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "trace"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "thunderbolt",
+      "icebeam",
+      "triattack",
+      "recover"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,252,4,0"
+  },
+  "hard_0059_bouffalant": {
+    "species": "bouffalant",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "reckless"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "headcharge",
+      "earthquake",
+      "closecombat",
+      "wildcharge"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,4,0"
+  },
+  "hard_0060_glaceon": {
+    "species": "glaceon",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "icebody"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "icebeam",
+      "shadowball",
+      "alluringvoice",
+      "freezedry"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,4,252,0,0"
+  },
+  "hard_0061_lapras": {
+    "species": "lapras",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "waterabsorb"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "toxic",
+      "icebeam",
+      "surf",
+      "thunderbolt"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,252,4,0"
+  },
+  "hard_0062_lickilicky": {
+    "species": "lickilicky",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "cloudnine"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "bodyslam",
+      "earthquake",
+      "firepunch",
+      "hammerarm"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,4,0"
+  },
+  "hard_0063_lopunny": {
+    "species": "lopunny",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "limber"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "closecombat",
+      "quickattack",
+      "firepunch",
+      "tripleaxel"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,0,0,252"
+  },
+  "hard_0064_noctowl": {
+    "species": "noctowl",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "tintedlens"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "hurricane",
+      "hypervoice",
+      "moonblast",
+      "heatwave"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,252,4,0"
+  },
+  "hard_0065_bellossom": {
+    "species": "bellossom",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "chlorophyll"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "quiverdance",
+      "strengthsap",
+      "gigadrain",
+      "pollenpuff"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,252,0,4,0"
+  },
+  "hard_0066_muk": {
+    "species": "muk",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "poisontouch"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "gunkshot",
+      "drainpunch",
+      "firepunch",
+      "shadowsneak"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,4,0"
+  },
+  "hard_0067_sableye": {
+    "species": "sableye",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "prankster"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "willowisp",
+      "shadowclaw",
+      "recover",
+      "foulplay"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,0,252,0"
+  },
+  "hard_0068_maractus": {
+    "species": "maractus",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "stormdrain"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "gigadrain",
+      "toxic",
+      "spikyshield",
+      "spikes"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,4,252,0"
+  },
+  "hard_0069_hitmonchan": {
+    "species": "hitmonchan",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "ironfist"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "drainpunch",
+      "bulletpunch",
+      "icepunch",
+      "thunderpunch"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,4,0"
+  },
+  "hard_0070_hypno": {
+    "species": "hypno",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "innerfocus"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "firepunch",
+      "zenheadbutt",
+      "drainpunch",
+      "icepunch"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,4,0"
+  },
+  "hard_0071_carnivine": {
+    "species": "carnivine",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "levitate"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "powerwhip",
+      "toxic",
+      "leechseed",
+      "protect"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,0,252,0"
+  },
+  "hard_0072_gourgeist": {
+    "species": "gourgeist",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "insomnia"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "seedbomb",
+      "shadowsneak",
+      "leechseed",
+      "willowisp"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,252,0,4,0"
+  },
+  "hard_0073_mrmime": {
+    "species": "mrmime",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "technician"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "shadowball",
+      "psychic",
+      "dazzlinggleam",
+      "calmmind"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "0,0,0,252,4,252"
+  },
+  "hard_0074_volbeat": {
+    "species": "volbeat",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "prankster"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "thunderwave",
+      "lunge",
+      "roost",
+      "encore"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,0,252,4"
+  },
+  "hard_0075_tropius": {
+    "species": "tropius",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "harvest"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "airslash",
+      "gigadrain",
+      "earthquake",
+      "roost"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,4,0,252,0"
+  },
+  "hard_0076_walrein": {
+    "species": "walrein",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "thickfat"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "icebeam",
+      "surf",
+      "toxic",
+      "protect"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,4,252,0"
+  },
+  "hard_0077_musharna": {
+    "species": "musharna",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "synchronize"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "psychic",
+      "dazzlinggleam",
+      "toxic",
+      "painsplit"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,4,252,0"
+  },
+  "hard_0078_masquerain": {
+    "species": "masquerain",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "intimidate"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "quiverdance",
+      "airslash",
+      "bugbuzz",
+      "hydropump"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,4,252,0"
+  },
+  "hard_0079_vespiquen": {
+    "species": "vespiquen",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "pressure"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "toxic",
+      "spikes",
+      "roost",
+      "airslash"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,4,0,252,0"
+  },
+  "hard_0080_chansey": {
+    "species": "chansey",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "naturalcure"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "thunderbolt",
+      "icebeam",
+      "stealthrock",
+      "seismictoss"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,0,252,4"
+  },
+  "hard_0081_eldegoss": {
+    "species": "eldegoss",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "cottondown"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "sleeppowder",
+      "leechseed",
+      "gigadrain",
+      "pollenpuff"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,4,0,252,0"
+  },
+  "hard_0082_pyukumuku": {
+    "species": "pyukumuku",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "innardsout"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "recover",
+      "toxic",
+      "counter",
+      "mirrorcoat"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,4,0,252,0"
+  },
+  "hard_0083_carbink": {
+    "species": "carbink",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "sturdy"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "bodypress",
+      "stealthrock",
+      "toxic",
+      "irondefense"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,0,252,0,252,0"
+  },
+  "hard_0084_raticate_alolan": {
+    "species": "raticate",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "form=alolan",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "hustle"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "crunch",
+      "doubleedge",
+      "zenheadbutt",
+      "stompingtantrum"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,4,0,0,0,252"
+  },
+  "hard_0085_mantine": {
+    "species": "mantine",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "waterabsorb"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "airslash",
+      "scald",
+      "icebeam",
+      "roost"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,0,0,4,252,0"
+  },
+  "hard_0086_granbull": {
+    "species": "granbull",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "intimidate"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "playrough",
+      "closecombat",
+      "earthquake",
+      "trailblaze"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,4,0,0,0"
+  },
+  "hard_0087_absol": {
+    "species": "absol",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "superluck"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "nightslash",
+      "psychocut",
+      "closecombat",
+      "swordsdance"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,252,0,0,0,252"
+  },
+  "hard_0088_dusclops": {
+    "species": "dusclops",
+    "level_range": {
+      "min": 100,
+      "max": 100
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "pressure"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "hardy"
+      }
+    ],
+    "known_moves": [
+      "shadowsneak",
+      "firepunch",
+      "icepunch",
+      "thunderpunch"
+    ],
+    "possible_held_items": [],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "4,0,252,0,252,0"
+  }
+}

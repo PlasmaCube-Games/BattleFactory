@@ -1,0 +1,23 @@
+{
+  "prefix": "<gray>[<aqua>BattleFactory<gray>]",
+  "messages": {
+    "command_reload": "%prefix% <green>Reloaded!",
+    "command_status": "%prefix% <gray>Current Streak: <yellow>%round%<gray>. Current Tier: <yellow>%tier%",
+    "battleFactory_stopped": "%prefix% <green>Battle Factory Stopped!",
+    "command_resetPlayerData": "%prefix% <green>Successfully reset %player.name%'s data!",
+    "command_resetLeaderboard": "%prefix% <green>Successfully reset the leaderboard!",
+    "command_forceRound_success": "%prefix% <green>Forced %player.name% to the next round!",
+    "command_forceRound_fail": "%prefix% <red>%player.name% is not in a battle factory instance!",
+    "command_forceStop_success": "%prefix% <green>Stopped %player.name%'s battle factory instance!",
+    "command_forceStop_fail": "%prefix% <red>%player.name% is not in a battle factory instance!",
+    "command_forceStart_success": "%prefix% <green>Started a battle factory instance for %player.name%!",
+    "command_forceStart_fail": "%prefix% <red>%player.name% is already in a battle factory instance!",
+    "error_alreadyInBattleFactory": "%prefix% <red>You're already in the battle factory!",
+    "error_failedToStartBattle": "%prefix% <red>Failed to start battle!",
+    "overlay_nextRoundTimer": "<gray>Next Round In: <yellow>%round_timer%",
+    "overlay_currentStatus": "<gray>Current Round: <yellow>%round% <gray>| Current Tier: <yellow>%tier% (%tier.round%/%tier.total_rounds%)",
+    "overlay_bonusEncounter": "<rainbow><b>BONUS ENCOUNTER",
+    "leaderboard_header": "<gray>--------- Page %page% / %max_pages% ---------",
+    "leaderboard_section": "<gray>[%section.placement%] %section.player_name% | Streak: %section.highest_streak% (%section.date_achieved%)"
+  }
+}

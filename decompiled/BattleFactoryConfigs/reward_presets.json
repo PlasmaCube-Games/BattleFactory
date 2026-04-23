@@ -1,0 +1,19 @@
+{
+  "example_item_reward": {
+    "type": "item",
+    "item": "minecraft:diamond",
+    "item_name": "",
+    "item_lore": [],
+    "item_data": {},
+    "count": {
+      "min": 1,
+      "max": 4
+    }
+  },
+  "example_command_reward": {
+    "type": "command",
+    "commands": [
+      "say This is the example command reward!"
+    ]
+  }
+}

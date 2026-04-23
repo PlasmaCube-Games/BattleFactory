@@ -1,0 +1,20 @@
+{
+  "title": "<gold>Choisis le Pokémon que tu veux récupérer !",
+  "rows": 1,
+  "slots": [
+    "###PPP###"
+  ],
+  "background_item": {
+    "symbol": "#",
+    "item": "minecraft:air",
+    "item_name": "",
+    "item_lore": [],
+    "item_data": {}
+  },
+  "pokemon_item": {
+    "symbol": "P",
+    "item_name": "<gray>%pokemon.name%",
+    "item_lore": [],
+    "item_data": {}
+  }
+}

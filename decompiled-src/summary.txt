@@ -1,0 +1,2 @@
+Summary for src/CobblemonBattleFactory-1.0.9-1.7.0.jar
+Decompiled with CFR 0.152

@@ -1,0 +1,32 @@
+{
+  "mappings": {
+    "me/unariginal/cobblemonbattlefactory/mixin/HideEntitiesMixin": {
+      "canBeSpectated": "Lnet/minecraft/class_1297;method_5680(Lnet/minecraft/class_3222;)Z"
+    },
+    "me/unariginal/cobblemonbattlefactory/mixin/PlayerDeathMixin": {
+      "onDeath": "Lnet/minecraft/class_3222;method_6078(Lnet/minecraft/class_1282;)V"
+    },
+    "me/unariginal/cobblemonbattlefactory/mixin/PreventDropsMixin": {
+      "onDeath": "Lnet/minecraft/class_1309;method_6078(Lnet/minecraft/class_1282;)V"
+    },
+    "me/unariginal/cobblemonbattlefactory/mixin/PreventHeldItems": {
+      "updatePostDeath": "Lcom/cobblemon/mod/common/entity/pokemon/PokemonEntity;method_6108()V"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "me/unariginal/cobblemonbattlefactory/mixin/HideEntitiesMixin": {
+        "canBeSpectated": "Lnet/minecraft/class_1297;method_5680(Lnet/minecraft/class_3222;)Z"
+      },
+      "me/unariginal/cobblemonbattlefactory/mixin/PlayerDeathMixin": {
+        "onDeath": "Lnet/minecraft/class_3222;method_6078(Lnet/minecraft/class_1282;)V"
+      },
+      "me/unariginal/cobblemonbattlefactory/mixin/PreventDropsMixin": {
+        "onDeath": "Lnet/minecraft/class_1309;method_6078(Lnet/minecraft/class_1282;)V"
+      },
+      "me/unariginal/cobblemonbattlefactory/mixin/PreventHeldItems": {
+        "updatePostDeath": "Lcom/cobblemon/mod/common/entity/pokemon/PokemonEntity;method_6108()V"
+      }
+    }
+  }
+}

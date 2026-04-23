@@ -1,0 +1,42 @@
+{
+  "example_reward_pool": {
+    "allow_duplicates": true,
+    "rolls": {
+      "min": 1,
+      "max": 3
+    },
+    "rewards": [
+      {
+        "weight": 1,
+        "reward": {
+          "type": "item",
+          "item": "minecraft:iron_ingot",
+          "item_name": "",
+          "item_lore": [],
+          "item_data": {},
+          "count": {
+            "min": 1,
+            "max": 8
+          }
+        }
+      },
+      {
+        "weight": 1,
+        "reward": {
+          "type": "command",
+          "commands": [
+            "say This is a command built-in to the reward pool example!"
+          ]
+        }
+      },
+      {
+        "weight": 1,
+        "reward_preset": "example_item_reward"
+      },
+      {
+        "weight": 1,
+        "reward_preset": "example_command_reward"
+      }
+    ]
+  }
+}

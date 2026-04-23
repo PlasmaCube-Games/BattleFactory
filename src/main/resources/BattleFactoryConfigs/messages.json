@@ -1,0 +1,27 @@
+{
+  "prefix": "<gray>[<aqua>BattleFactory<gray>]",
+  "messages": {
+    "command_reload": "%prefix% <green>Configuration rechargée !",
+    "command_status": "%prefix% <gray>Série actuelle : <yellow>%round%<gray>. Tier actuel : <yellow>%tier%",
+    "battleFactory_stopped": "%prefix% <green>Battle Factory arrêtée !",
+    "command_resetPlayerData": "%prefix% <green>Données de %player.name% réinitialisées avec succès !",
+    "command_resetLeaderboard": "%prefix% <green>Classement réinitialisé avec succès !",
+    "command_forceRound_success": "%prefix% <green>%player.name% forcé au round suivant !",
+    "command_forceRound_fail": "%prefix% <red>%player.name% n'est pas dans une Battle Factory !",
+    "command_forceStop_success": "%prefix% <green>Battle Factory de %player.name% arrêtée !",
+    "command_forceStop_fail": "%prefix% <red>%player.name% n'est pas dans une Battle Factory !",
+    "command_forceStart_success": "%prefix% <green>Battle Factory démarrée pour %player.name% !",
+    "command_forceStart_fail": "%prefix% <red>%player.name% est déjà dans une Battle Factory !",
+    "command_resetCooldown_success": "%prefix% <green>Cooldown de %player.name% réinitialisé !",
+    "command_resetCooldown_fail": "%prefix% <red>Impossible de réinitialiser le cooldown de %player.name% !",
+    "error_alreadyInBattleFactory": "%prefix% <red>Tu es déjà dans la Battle Factory !",
+    "error_failedToStartBattle": "%prefix% <red>Impossible de démarrer le combat !",
+    "error_waitForCooldown": "%prefix% <red>Tu es encore en cooldown ! %player.cooldown%",
+    "error_bannedBagItem": "%prefix% <red>Tu ne peux pas utiliser cet objet dans la Battle Factory !",
+    "overlay_nextRoundTimer": "<gray>Prochain round dans : <yellow>%round_timer%",
+    "overlay_currentStatus": "<gray>Round actuel : <yellow>%round% <gray>| Tier : <yellow>%tier% (%tier.round%/%tier.total_rounds%)",
+    "overlay_bonusEncounter": "<rainbow><b>RENCONTRE BONUS",
+    "leaderboard_header": "<gray>--------- Page %page% / %max_pages% ---------",
+    "leaderboard_section": "<gray>[%section.placement%] %section.player_name% | Série : %section.highest_streak% (%section.date_achieved%)"
+  }
+}

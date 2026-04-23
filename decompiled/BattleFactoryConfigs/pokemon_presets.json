@@ -1,0 +1,49 @@
+{
+  "arcanine_preset_1": {
+    "species": "arcanine",
+    "level_range": {
+      "min": 50,
+      "max": 50
+    },
+    "species_features": "",
+    "possible_genders": [
+      {
+        "weight": 1,
+        "gender": "male"
+      }
+    ],
+    "possible_abilities": [
+      {
+        "weight": 1,
+        "ability": "intimidate"
+      }
+    ],
+    "possible_natures": [
+      {
+        "weight": 1,
+        "nature": "adamant"
+      }
+    ],
+    "known_moves": [
+      "flareblitz",
+      "crunch",
+      "extremespeed",
+      "roar",
+      "flamethrower",
+      "judgement",
+      "leer",
+      "swordsdance"
+    ],
+    "possible_held_items": [
+      {
+        "weight": 1,
+        "item": "cobblemon:leftovers",
+        "item_name": "",
+        "item_lore": [],
+        "item_data": {}
+      }
+    ],
+    "ivs": "31,31,31,31,31,31",
+    "evs": "252,252,0,0,4,0"
+  }
+}

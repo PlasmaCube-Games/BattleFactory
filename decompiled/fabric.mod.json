@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "cobblemonbattlefactory",
+  "version": "1.0.9-1.7.0",
+  "name": "CobblemonBattleFactory",
+  "description": "Battle Factory Mod for Cobblemon 1.6.1",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.unariginal.cobblemonbattlefactory.BattleFactory"
+    ]
+  },
+  "mixins": [
+    "cobblemonbattlefactory.mixins.json",
+    {
+      "config": "cobblemonbattlefactory.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": "\u003e\u003d0.16.10",
+    "fabric": "*",
+    "minecraft": "1.21.1",
+    "cobblemon": "\u003e\u003d1.6.1+1.21.1"
+  },
+  "jars": [
+    {
+      "file": "META-INF/jars/adventure-platform-fabric-5.14.1.jar"
+    },
+    {
+      "file": "META-INF/jars/adventure-text-minimessage-4.17.0.jar"
+    },
+    {
+      "file": "META-INF/jars/fabric-permissions-api-0.3.1.jar"
+    },
+    {
+      "file": "META-INF/jars/sgui-1.6.1+1.21.1.jar"
+    }
+  ]
+}

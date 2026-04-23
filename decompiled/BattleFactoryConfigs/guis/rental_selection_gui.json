@@ -1,0 +1,55 @@
+{
+  "title": "<gold>Rental Selection",
+  "rows": 5,
+  "slots": [
+    "#########",
+    "#RRR#RRR#",
+    "#########",
+    "#########",
+    "###C#S###"
+  ],
+  "background_item": {
+    "symbol": "#",
+    "item": "minecraft:air",
+    "item_name": "",
+    "item_lore": [],
+    "item_data": {}
+  },
+  "rentalPokemon_item": {
+    "enchant_on_select": true,
+    "symbol": "R",
+    "item_name": "<gray>%pokemon.name% %pokemon.gender% %pokemon.shiny%",
+    "item_lore": [
+      "<gray>Level: %pokemon.level%",
+      "<gray>Form: %pokemon.form%",
+      "<gray>Ability: %pokemon.ability%",
+      "<gray>Nature: %pokemon.nature%",
+      "<gray>IVs: HP %pokemon.ivs.hp% Atk %pokemon.ivs.atk% Def %pokemon.ivs.def% SpAt %pokemon.ivs.spatk% SpDe %pokemon.ivs.spdef% Spd %pokemon.ivs.spd%",
+      "<gray>EVs: HP %pokemon.evs.hp% Atk %pokemon.evs.atk% Def %pokemon.evs.def% SpAt %pokemon.evs.spatk% SpDe %pokemon.evs.spdef% Spd %pokemon.evs.spd%",
+      "<gray>Moves: %pokemon.moves.1% | %pokemon.moves.2% | %pokemon.moves.3% | %pokemon.moves.4%"
+    ],
+    "item_data": {}
+  },
+  "selected_item": {
+    "show_above_selected_pokemon": true,
+    "show_below_selected_pokemon": true,
+    "item": "minecraft:lime_stained_glass_pane",
+    "item_name": "<green>Selected",
+    "item_lore": [],
+    "item_data": {}
+  },
+  "cancel_item": {
+    "symbol": "C",
+    "item": "minecraft:red_concrete",
+    "item_name": "<red>Cancel",
+    "item_lore": [],
+    "item_data": {}
+  },
+  "start_item": {
+    "symbol": "S",
+    "item": "minecraft:green_concrete",
+    "item_name": "<green>Confirm",
+    "item_lore": [],
+    "item_data": {}
+  }
+}

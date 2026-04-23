@@ -1,0 +1,562 @@
+{
+  "resourceIdentifier": "cobblemon:standard",
+  "names": [
+    "Battle Factory NPC (Hard)"
+  ],
+  "hitbox": "player",
+  "canDespawn": false,
+  "isInvulnerable": true,
+  "isLeashable": false,
+  "allowProjectileHits": false,
+  "battleConfiguration": {
+    "canChallenge": true
+  },
+  "autoHealParty": true,
+  "ai": [
+    {
+      "type": "apply_behaviours",
+      "behaviours": [
+        "cobblemon:looking",
+        "cobblemon:looks_in_one_direction",
+        "cobblemon:battler"
+      ]
+    }
+  ],
+  "skill": 5,
+  "party": {
+    "type": "pool",
+    "minPokemon": 3,
+    "maxPokemon": 3,
+    "isStatic": false,
+    "pool": [
+      {
+        "pokemon": "swanna uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=4 special_defence_ev=0 speed_ev=252 ability=hydration moves=scald:icebeam:hurricane:alluringvoice",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "cryogonal uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=4 attack_ev=0 defence_ev=0 special_attack_ev=0 special_defence_ev=252 speed_ev=252 ability=levitate moves=icebeam:freezedry:flashcannon:rapidspin",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "chatot uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=4 special_defence_ev=0 speed_ev=252 ability=keeneye moves=boomburst:heatwave:chatter:nastyplot",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "smeargle uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=4 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=owntempo moves=stoneedge:ceaselessedge:stickyweb:nuzzle",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "ninjask uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=4 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=speedboost moves=xscissor:dualwingbeat:nightslash:substitute",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "liepard uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=4 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=prankster moves=thunderwave:playrough:gunkshot:throatchop",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "vivillon uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=252 special_defence_ev=0 speed_ev=4 ability=compoundeyes moves=quiverdance:hurricane:bugbuzz:gigadrain",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "kingler uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=0 attack_ev=252 defence_ev=4 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=sheerforce moves=liquidation:hammerarm:rockslide:highhorsepower",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "kecleon uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=4 ability=protean moves=bodyslam:shadowsneak:rockslide:drainpunch",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "vigoroth uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=4 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=vitalspirit moves=bodyslam:earthquake:suckerpunch:trailblaze",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "unfezant uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=4 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=superluck moves=nightslash:bravebird:quickattack:roost",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "qwilfish uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=4 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=intimidate moves=gunkshot:liquidation:haze:spikes",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "sandslash uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=4 special_attack_ev=0 special_defence_ev=0 speed_ev=0 ability=sandrush moves=stealthrock:earthquake:leechlife:rockslide",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "mawile uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=4 special_attack_ev=0 special_defence_ev=0 speed_ev=0 ability=sheerforce moves=playrough:ironhead:icepunch:thunderpunch",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "morpeko uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=4 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 moves=aurawheel:icefang:stompingtantrum:rapidspin",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "bibarel uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=4 ability=simple moves=curse:aquatail:doubleedge:stompingtantrum",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "spinda uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=4 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=contrary moves=suckerpunch:bodyslam:superpower:wildcharge",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "shiftry uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=4 ability=windrider moves=swordsdance:leafblade:throatchop:rockslide",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "boltund uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=4 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=strongjaw moves=wildcharge:psychicfangs:playrough:flamecharge",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "emolga uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=4 special_defence_ev=0 speed_ev=252 ability=motordrive moves=discharge:airslash:roost:energyball",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "cacturne uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=4 defence_ev=0 special_attack_ev=252 special_defence_ev=0 speed_ev=0 ability=waterabsorb moves=gigadrain:darkpulse:focusblast:shadowball",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "linoone galarian uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=4 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=quickfeet moves=throatchop:stompingtantrum:bodyslam:gunkshot",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "linoone uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=4 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=gluttony moves=bellydrum:extremespeed:throatchop:stompingtantrum",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "fearow uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=4 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=sniper moves=doubleedge:drillpeck:drillrun:throatchop",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "gligar uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=4 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=immunity moves=roost:earthquake:dualwingbeat:stoneedge",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "golem uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=4 special_attack_ev=0 special_defence_ev=0 speed_ev=0 ability=sturdy moves=rockpolish:earthquake:stoneedge:superpower",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "leafeon uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=0 attack_ev=252 defence_ev=252 special_attack_ev=0 special_defence_ev=0 speed_ev=4 ability=chlorophyll moves=leafblade:doubleedge:xscissor:swordsdance",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "solrock uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=4 special_attack_ev=0 special_defence_ev=0 speed_ev=0 ability=levitate moves=stoneedge:zenheadbutt:earthquake:flareblitz",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "sudowoodo uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=4 special_attack_ev=0 special_defence_ev=0 speed_ev=0 ability=rockhead moves=headsmash:earthquake:woodhammer:firepunch",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "victreebel uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=4 ability=chlorophyll moves=swordsdance:powerwhip:suckerpunch:poisonjab",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "sawsbuck uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=4 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=sapsipper moves=bodyslam:hornleech:jumpkick:stompingtantrum",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "xatu uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=4 attack_ev=0 defence_ev=0 special_attack_ev=252 special_defence_ev=0 speed_ev=252 ability=magicbounce moves=calmmind:airslash:heatwave:psyshock",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "tauros uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=4 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=sheerforce moves=bodyslam:earthquake:zenheadbutt:rockslide",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "bisharp uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=4 ability=defiant moves=psychocut:ironhead:brickbreak:throatchop",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "whiscash uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=4 ability=hydration moves=dragondance:earthquake:waterfall:rockslide",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "plusle uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=4 attack_ev=0 defence_ev=0 special_attack_ev=252 special_defence_ev=0 speed_ev=252 ability=lightningrod moves=thunderbolt:grassknot:alluringvoice:signalbeam",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "ursaring uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=4 ability=quickfeet moves=doubleedge:superpower:firepunch:throatchop",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "toucannon uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=4 ability=skilllink moves=bulletseed:beakblast:rockblast:flamecharge",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "camerupt uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=252 special_defence_ev=4 speed_ev=0 ability=solidrock moves=earthpower:fireblast:ancientpower:flashcannon",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "lanturn uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=252 special_defence_ev=4 speed_ev=0 ability=voltabsorb moves=scald:thunderbolt:icebeam:dazzlinggleam",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "electrode hisuian uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=4 special_defence_ev=0 speed_ev=252 ability=static moves=gigadrain:thunderbolt:foulplay:doubleedge",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "raichu uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=4 attack_ev=0 defence_ev=0 special_attack_ev=252 special_defence_ev=0 speed_ev=252 ability=lightningrod moves=nastyplot:thunderbolt:surf:focusblast",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "rapidash galarian uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=4 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=pastelveil moves=swordsdance:playrough:psychocut:highhorsepower",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "rapidash uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=4 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=flashfire moves=flareblitz:wildcharge:highhorsepower:playrough",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "golduck uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=252 special_defence_ev=0 speed_ev=4 ability=swiftswim moves=scald:icebeam:psychicnoise:focusblast",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "kangaskhan uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=4 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=scrappy moves=bodyslam:earthquake:drainpunch:crunch",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "marowak uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=4 special_attack_ev=0 special_defence_ev=0 speed_ev=0 ability=battlearmor moves=earthquake:stoneedge:firepunch:lowkick",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "magcargo uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=4 attack_ev=0 defence_ev=252 special_attack_ev=252 special_defence_ev=0 speed_ev=0 ability=weakarmor moves=shellsmash:fireblast:earthpower:powergem",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "roselia uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=252 special_defence_ev=4 speed_ev=0 ability=naturalcure moves=gigadrain:sludgebomb:dazzlinggleam:extrasensory",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "sceptile uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=4 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=unburden moves=swordsdance:leafblade:earthquake:acrobatics",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "lunatone uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=252 special_defence_ev=0 speed_ev=4 ability=levitate moves=calmmind:powergem:psychic:earthpower",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "machamp uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=4 speed_ev=0 ability=guts moves=closecombat:bulletpunch:earthquake:throatchop",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "lumineon uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=4 special_defence_ev=0 speed_ev=252 ability=stormdrain moves=scald:icebeam:airslash:alluringvoice",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "mrmime galarian uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=4 attack_ev=0 defence_ev=0 special_attack_ev=252 special_defence_ev=0 speed_ev=252 ability=vitalspirit moves=icebeam:freezedry:psychic:focusblast",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "stoutland uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=4 ability=scrappy moves=facade:superpower:crunch:wildcharge",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "vibrava uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=4 defence_ev=0 special_attack_ev=0 special_defence_ev=252 speed_ev=0 ability=levitate moves=stealthrock:earthquake:roost:dragonclaw",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "komala uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=4 ability=comatose moves=bodyslam:earthquake:suckerpunch:woodhammer",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "porygon2 uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=252 special_defence_ev=4 speed_ev=0 ability=trace moves=thunderbolt:icebeam:triattack:recover",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "bouffalant uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=4 speed_ev=0 ability=reckless moves=headcharge:earthquake:closecombat:wildcharge",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "glaceon uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=4 special_attack_ev=252 special_defence_ev=0 speed_ev=0 ability=icebody moves=icebeam:shadowball:alluringvoice:freezedry",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "lapras uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=252 special_defence_ev=4 speed_ev=0 ability=waterabsorb moves=toxic:icebeam:surf:thunderbolt",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "lickilicky uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=4 speed_ev=0 ability=cloudnine moves=bodyslam:earthquake:firepunch:hammerarm",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "lopunny uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=4 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=limber moves=closecombat:quickattack:firepunch:tripleaxel",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "noctowl uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=252 special_defence_ev=4 speed_ev=0 ability=tintedlens moves=hurricane:hypervoice:moonblast:heatwave",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "bellossom uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=252 special_attack_ev=0 special_defence_ev=4 speed_ev=0 ability=chlorophyll moves=quiverdance:strengthsap:gigadrain:pollenpuff",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "muk uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=4 speed_ev=0 ability=poisontouch moves=gunkshot:drainpunch:firepunch:shadowsneak",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "sableye uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=4 defence_ev=0 special_attack_ev=0 special_defence_ev=252 speed_ev=0 ability=prankster moves=willowisp:shadowclaw:recover:foulplay",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "maractus uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=4 special_defence_ev=252 speed_ev=0 ability=stormdrain moves=gigadrain:toxic:spikyshield:spikes",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "hitmonchan uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=4 speed_ev=0 ability=ironfist moves=drainpunch:bulletpunch:icepunch:thunderpunch",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "hypno uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=4 speed_ev=0 ability=innerfocus moves=firepunch:zenheadbutt:drainpunch:icepunch",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "carnivine uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=4 defence_ev=0 special_attack_ev=0 special_defence_ev=252 speed_ev=0 ability=levitate moves=powerwhip:toxic:leechseed:protect",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "gourgeist uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=252 special_attack_ev=0 special_defence_ev=4 speed_ev=0 ability=insomnia moves=seedbomb:shadowsneak:leechseed:willowisp",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "mrmime uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=0 attack_ev=0 defence_ev=0 special_attack_ev=252 special_defence_ev=4 speed_ev=252 ability=technician moves=shadowball:psychic:dazzlinggleam:calmmind",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "volbeat uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=0 special_defence_ev=252 speed_ev=4 ability=prankster moves=thunderwave:lunge:roost:encore",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "tropius uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=4 special_attack_ev=0 special_defence_ev=252 speed_ev=0 ability=harvest moves=airslash:gigadrain:earthquake:roost",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "walrein uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=4 special_defence_ev=252 speed_ev=0 ability=thickfat moves=icebeam:surf:toxic:protect",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "musharna uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=4 special_defence_ev=252 speed_ev=0 ability=synchronize moves=psychic:dazzlinggleam:toxic:painsplit",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "masquerain uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=4 special_defence_ev=252 speed_ev=0 ability=intimidate moves=quiverdance:airslash:bugbuzz:hydropump",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "vespiquen uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=4 special_attack_ev=0 special_defence_ev=252 speed_ev=0 ability=pressure moves=toxic:spikes:roost:airslash",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "chansey uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=0 special_defence_ev=252 speed_ev=4 ability=naturalcure moves=thunderbolt:icebeam:stealthrock:seismictoss",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "eldegoss uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=4 special_attack_ev=0 special_defence_ev=252 speed_ev=0 ability=cottondown moves=sleeppowder:leechseed:gigadrain:pollenpuff",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "pyukumuku uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=4 special_attack_ev=0 special_defence_ev=252 speed_ev=0 ability=innardsout moves=recover:toxic:counter:mirrorcoat",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "carbink uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=4 attack_ev=0 defence_ev=252 special_attack_ev=0 special_defence_ev=252 speed_ev=0 ability=sturdy moves=bodypress:stealthrock:toxic:irondefense",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "raticate alolan uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=4 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=hustle moves=crunch:doubleedge:zenheadbutt:stompingtantrum",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "mantine uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=0 defence_ev=0 special_attack_ev=4 special_defence_ev=252 speed_ev=0 ability=waterabsorb moves=airslash:scald:icebeam:roost",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "granbull uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=252 attack_ev=252 defence_ev=4 special_attack_ev=0 special_defence_ev=0 speed_ev=0 ability=intimidate moves=playrough:closecombat:earthquake:trailblaze",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "absol uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=4 attack_ev=252 defence_ev=0 special_attack_ev=0 special_defence_ev=0 speed_ev=252 ability=superluck moves=nightslash:psychocut:closecombat:swordsdance",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      },
+      {
+        "pokemon": "dusclops uncatchable=true level=100 hp_iv=31 attack_iv=31 defence_iv=31 special_attack_iv=31 special_defence_iv=31 speed_iv=31 hp_ev=4 attack_ev=0 defence_ev=252 special_attack_ev=0 special_defence_ev=252 speed_ev=0 ability=pressure moves=shadowsneak:firepunch:icepunch:thunderpunch",
+        "weight": 10,
+        "selectableTimes": 1,
+        "levelVariation": "0"
+      }
+    ]
+  }
+}
