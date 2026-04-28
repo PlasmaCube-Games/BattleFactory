@@ -66,7 +66,18 @@ public class EventManager {
             for (ServerPlayer player : battle.getPlayers()) {
                 if (BattleFactory.INSTANCE.getBattleFactoryInstance(player) == null) continue;
                 GeneralPlayerData playerData = Cobblemon.playerDataManager.getGenericData(player);
-                playerData.getKeyItems().removeIf(item -> BattleFactory.INSTANCE.config().bannedKeyItems.contains(item.toString()));
+                int beforeCount = playerData.getKeyItems().size();
+                java.util.List<String> removed = new java.util.ArrayList<>();
+                playerData.getKeyItems().removeIf(item -> {
+                    String id = item.toString();
+                    if (BattleFactory.INSTANCE.config().bannedKeyItems.contains(id)) {
+                        removed.add(id);
+                        return true;
+                    }
+                    return false;
+                });
+                BattleFactory.LOGGER.info("[BattleFactory] BATTLE_STARTED_PRE keyItems: player={} before={} removed={} ({})",
+                        player.getScoreboardName(), beforeCount, removed.size(), removed);
             }
             return Unit.INSTANCE;
         });
@@ -90,11 +101,20 @@ public class EventManager {
                     battleFactoryInstance.currentBattleID = null;
                     ArrayList<Pokemon> npcParty = new ArrayList<Pokemon>();
                     for (BattleActor loser : battleVictoryEvent.getLosers()) {
-                        NPCBattleActor npcBattleActor;
-                        NPCEntity npcEntity;
-                        if (!(loser instanceof NPCBattleActor) || !(npcEntity = (npcBattleActor = (NPCBattleActor)loser).getEntity()).getUUID().equals(battleFactoryInstance.currentNPC.getUUID())) continue;
-                        npcBattleActor.getPokemonList().forEach(pokemon -> npcParty.add(pokemon.getEffectedPokemon()));
-                        break;
+                        if (loser instanceof NPCBattleActor nba
+                                && nba.getEntity() != null
+                                && nba.getEntity().getUUID().equals(battleFactoryInstance.currentNPC.getUUID())) {
+                            nba.getPokemonList().forEach(pokemon -> npcParty.add(pokemon.getEffectedPokemon()));
+                            break;
+                        }
+                        // rctapi path: TrainerEntityBattleActor implements EntityBackedBattleActor
+                        if (loser instanceof com.cobblemon.mod.common.api.battles.model.actor.EntityBackedBattleActor ebba) {
+                            var ent = ebba.getEntity();
+                            if (ent != null && ent.getUUID().equals(battleFactoryInstance.currentNPC.getUUID())) {
+                                loser.getPokemonList().forEach(pokemon -> npcParty.add(pokemon.getEffectedPokemon()));
+                                break;
+                            }
+                        }
                     }
                     battleFactoryInstance.nextRound(battleFactoryInstance.inBonusEncounter, npcParty);
                 }

@@ -1,5 +1,10 @@
 package me.plascmabue.cobblemonbattlefactory.rct;
 
+import com.cobblemon.mod.common.battles.ActiveBattlePokemon;
+import com.cobblemon.mod.common.battles.BattleSide;
+import com.cobblemon.mod.common.battles.ShowdownActionResponse;
+import com.cobblemon.mod.common.battles.ShowdownMoveset;
+import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.gitlab.srcmc.rctapi.api.RCTApi;
 import com.gitlab.srcmc.rctapi.api.ai.RCTBattleAI;
@@ -41,6 +46,32 @@ public final class RCTBattleHelper {
     }
 
     /**
+     * RCTBattleAI subclass that force-clears all gimmick fields on the moveset before rctapi's logic
+     * runs. RCTBattleAI's {@code choose} reads canDynamax / canTerastallize / etc and may toggle them
+     * via setters; clearing here guarantees the AI never selects a gimmick action regardless of what
+     * Showdown sent or what the GimmicksMap says.
+     */
+    public static final class BfNoGimmickAI extends RCTBattleAI {
+        @Override
+        public ShowdownActionResponse choose(ActiveBattlePokemon active, PokemonBattle battle,
+                                             BattleSide side, ShowdownMoveset moveset, boolean isMega) {
+            if (moveset != null) {
+                try {
+                    moveset.setCanDynamax(false);
+                    moveset.setCanMegaEvo(false);
+                    moveset.setCanUltraBurst(false);
+                    moveset.setCanZMove(null);
+                    moveset.setCanTerastallize(null);
+                    moveset.setMaxMoves(null);
+                } catch (Throwable t) {
+                    BattleFactory.LOGGER.warn("[BattleFactory] BfNoGimmickAI clear failed: {}", t.getMessage());
+                }
+            }
+            return super.choose(active, battle, side, moveset, isMega);
+        }
+    }
+
+    /**
      * Builds NPC team from the tier's rental pool (same pokemon as player rentals — moves match).
      * Returns null on pool failure.
      */
@@ -67,15 +98,25 @@ public final class RCTBattleHelper {
     }
 
     /**
-     * Disable dynamax / G-max by zeroing dmaxLevel, and remove the held item so
-     * mega stones / Z-crystals / dynamax band triggers can't fire. Called on every
-     * NPC pokemon built by buildNpcTeam — matches the user's request to disable
-     * gimmicks in BattleFactory content (PSL keeps them on).
+     * Disable every gimmick at the data level: held item (mega stone / Z-crystal / ultra-burst item),
+     * dmaxLevel + gmaxFactor (dynamax / gigantamax), and teraType reset to the Pokemon's primary type
+     * so terastalization is a no-op even if the player still has a Tera Orb in keyItems.
+     * Applied to both NPC pokemon (buildNpcTeam) and player rental pokemon (BattleFactoryCommands +
+     * BattleFactoryInstance.openNewRentalGUI).
      */
-    private static void stripGimmicks(Pokemon p) {
+    public static void stripGimmicks(Pokemon p) {
         try {
             p.setDmaxLevel(0);
+            p.setGmaxFactor(false);
             p.setHeldItem$common(net.minecraft.world.item.ItemStack.EMPTY);
+            try {
+                var primaryType = p.getPrimaryType();
+                var teraTypes = com.cobblemon.mod.common.api.types.tera.TeraTypes.INSTANCE;
+                var teraForType = teraTypes.forElementalType(primaryType);
+                if (teraForType != null) p.setTeraType(teraForType);
+            } catch (Throwable teraEx) {
+                BattleFactory.LOGGER.debug("[BattleFactory] stripGimmicks teraType reset failed: {}", teraEx.getMessage());
+            }
         } catch (Throwable t) {
             BattleFactory.LOGGER.debug("[BattleFactory] stripGimmicks failed (non-fatal): {}", t.getMessage());
         }
@@ -95,11 +136,33 @@ public final class RCTBattleHelper {
                 return null;
             }
             BFTrainerPlayer playerTrainer = new BFTrainerPlayer(player, rentals);
+            // Build a GimmicksMap that forbids tera/dynamax/gmax for every NPC pokemon.
+            // GimmicksMap has no public setter — inject via reflection on its private 'map' field.
+            com.gitlab.srcmc.rctapi.api.trainer.TrainerNPC.GimmicksMap noGimmicks =
+                    new com.gitlab.srcmc.rctapi.api.trainer.TrainerNPC.GimmicksMap();
+            try {
+                java.lang.reflect.Field mapField = com.gitlab.srcmc.rctapi.api.trainer.TrainerNPC.GimmicksMap.class
+                        .getDeclaredField("map");
+                mapField.setAccessible(true);
+                @SuppressWarnings("unchecked")
+                java.util.Map<java.util.UUID, com.gitlab.srcmc.rctapi.api.models.Gimmicks> internalMap =
+                        (java.util.Map<java.util.UUID, com.gitlab.srcmc.rctapi.api.models.Gimmicks>) mapField.get(noGimmicks);
+                com.gitlab.srcmc.rctapi.api.models.Gimmicks disabled =
+                        new com.gitlab.srcmc.rctapi.api.models.Gimmicks(null, false, false);
+                for (Pokemon p : npcTeam) {
+                    if (p == null) continue;
+                    internalMap.put(p.getUuid(), disabled);
+                }
+            } catch (Throwable reflectEx) {
+                BattleFactory.LOGGER.warn("[BattleFactory] Could not inject GimmicksMap (fallback = default gimmicks): {}",
+                        reflectEx.getMessage());
+            }
             TrainerNPC npcTrainer = new TrainerNPC(
                     Text.literal(npcDisplayName != null ? npcDisplayName : "Trainer"),
                     npcTeam,
+                    noGimmicks,
                     new TrainerBag(),
-                    new RCTBattleAI(),
+                    new BfNoGimmickAI(),
                     npcEntity
             );
             UUID battleId = rct.getBattleManager().startBattle(

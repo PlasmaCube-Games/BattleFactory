@@ -114,6 +114,20 @@ public class BattleFactoryInstance {
     public boolean roundTransition = false;
     public boolean inBonusEncounter = false;
     public List<Reward> collectedRewards = new ArrayList<Reward>();
+    /** Trainer-gimmick items (Tera Orb, Dynamax Band, Mega Bracelet, Z-Ring) stashed during a BF run. */
+    public final java.util.List<ItemStack> stashedTrainerItems = new java.util.ArrayList<>();
+    private static final java.util.Set<String> GIMMICK_ITEM_IDS = java.util.Set.of(
+            "mega_showdown:tera_orb",
+            "mega_showdown:dynamax_band",
+            "mega_showdown:dynamax_candy",
+            "mega_showdown:mega_bracelet",
+            "mega_showdown:mega_bracelet_black",
+            "mega_showdown:mega_bracelet_blue",
+            "mega_showdown:mega_bracelet_green",
+            "mega_showdown:mega_bracelet_pink",
+            "mega_showdown:mega_bracelet_red",
+            "mega_showdown:mega_bracelet_yellow"
+    );
 
     public BattleFactoryInstance(ServerPlayer challenger, List<Pokemon> rentedPokemon, TierSettings currentTier) {
         this.challenger = challenger;
@@ -127,11 +141,85 @@ public class BattleFactoryInstance {
             pokemon.setPersistentData$common(data);
             this.rentalParty.add(pokemon);
         }
+        stashTrainerItems();
         this.nextRound(false, null);
+    }
+
+    /** Restore every move's PP to max on the given Pokemon. {@link Pokemon#heal()} resets HP/status but not PP. */
+    private static void restoreMovePP(Pokemon p) {
+        try {
+            var moveSet = p.getMoveSet();
+            if (moveSet == null) return;
+            for (var move : moveSet) {
+                if (move == null) continue;
+                move.setCurrentPp(move.getMaxPp());
+            }
+        } catch (Throwable t) {
+            BattleFactory.LOGGER.warn("[BattleFactory] restoreMovePP failed for {}: {}", p.getSpecies().getName(), t.getMessage());
+        }
+    }
+
+    /** Diagnostic: log current PP / max for every move of a Pokemon. */
+    private static void logMovePP(Pokemon p, String tag) {
+        try {
+            var moveSet = p.getMoveSet();
+            if (moveSet == null) return;
+            StringBuilder sb = new StringBuilder();
+            sb.append("[BattleFactory] PP ").append(tag).append(" ").append(p.getSpecies().getName()).append(": ");
+            for (var move : moveSet) {
+                if (move == null) continue;
+                sb.append(move.getName()).append("(").append(move.getCurrentPp()).append("/").append(move.getMaxPp()).append(") ");
+            }
+            BattleFactory.LOGGER.info(sb.toString());
+        } catch (Throwable t) {
+            BattleFactory.LOGGER.warn("[BattleFactory] logMovePP failed: {}", t.getMessage());
+        }
+    }
+
+    private String rentalPartyNamesForLog() {
+        StringBuilder sb = new StringBuilder("[");
+        int i = 0;
+        for (Pokemon p : this.rentalParty) {
+            if (i > 0) sb.append(", ");
+            sb.append(p == null ? "null" : p.getSpecies().getName());
+            i++;
+        }
+        sb.append("]");
+        return sb.toString();
+    }
+
+    /** Remove player's trainer-gimmick items from inventory and stash them for later restoration. */
+    public void stashTrainerItems() {
+        stashedTrainerItems.clear();
+        var inv = this.challenger.getInventory();
+        for (int i = 0; i < inv.getContainerSize(); i++) {
+            ItemStack stack = inv.getItem(i);
+            if (stack == null || stack.isEmpty()) continue;
+            var id = BuiltInRegistries.ITEM.getKey(stack.getItem()).toString();
+            if (GIMMICK_ITEM_IDS.contains(id)) {
+                stashedTrainerItems.add(stack.copy());
+                inv.setItem(i, ItemStack.EMPTY);
+                BattleFactory.LOGGER.info("[BattleFactory] Stashed trainer item {} (x{}) from slot {}", id, stack.getCount(), i);
+            }
+        }
+    }
+
+    /** Restore stashed trainer items back to the player's inventory. */
+    public void restoreTrainerItems() {
+        if (stashedTrainerItems.isEmpty()) return;
+        var inv = this.challenger.getInventory();
+        for (ItemStack stack : stashedTrainerItems) {
+            if (!inv.add(stack)) {
+                this.challenger.drop(stack, false);
+            }
+        }
+        BattleFactory.LOGGER.info("[BattleFactory] Restored {} trainer item(s) to {}", stashedTrainerItems.size(), this.challenger.getScoreboardName());
+        stashedTrainerItems.clear();
     }
 
     public void stopInstance() {
         PokemonBattle battle;
+        restoreTrainerItems();
         if (!this.roundTransition) {
             --this.round;
         }
@@ -310,6 +398,19 @@ public class BattleFactoryInstance {
     }
 
     public void startBattle() {
+        BattleFactory.LOGGER.info("[BattleFactory] startBattle: rentalParty = {}", rentalPartyNamesForLog());
+        // Heal + restore PP again here. Showdown can flush late PP-sync messages after our previous
+        // heal in nextRound, which overwrite the restored PP before the next battle starts.
+        for (Pokemon p : this.rentalParty) {
+            if (p == null) continue;
+            try {
+                p.heal();
+                restoreMovePP(p);
+            } catch (Throwable ignored) {}
+        }
+        for (Pokemon p : this.rentalParty) {
+            if (p != null) logMovePP(p, "AT-START-BATTLE");
+        }
         int desiredCount = Math.max(1, this.bf.config().numberOfPokemonRented);
         Pokemon[] npcTeam = me.plascmabue.cobblemonbattlefactory.rct.RCTBattleHelper.buildNpcTeam(this.currentTier, desiredCount);
         if (npcTeam == null || npcTeam.length == 0) {
@@ -358,6 +459,23 @@ public class BattleFactoryInstance {
     }
 
     public void nextRound(boolean fromBonusEncounter, List<Pokemon> npcParty) {
+        // Fully heal the player's rental party between rounds (HP + status + PP)
+        int healedCount = 0;
+        for (Pokemon p : this.rentalParty) {
+            if (p == null) continue;
+            try {
+                logMovePP(p, "PRE-HEAL");
+                p.heal();
+                logMovePP(p, "POST-HEAL");
+                restoreMovePP(p);
+                logMovePP(p, "POST-RESTORE");
+                healedCount++;
+            } catch (Throwable t) {
+                BattleFactory.LOGGER.warn("[BattleFactory] heal failed for {}: {}", p.getSpecies().getName(), t.getMessage());
+            }
+        }
+        BattleFactory.LOGGER.info("[BattleFactory] nextRound: healed {} rentals, npcParty size={}",
+                healedCount, npcParty != null ? npcParty.size() : 0);
         if (npcParty != null) {
             for (Pokemon pokemon : npcParty) {
                 if (!pokemon.heldItem().isEmpty() || !pokemon.getPersistentData().contains("bf_heldItem")) continue;
@@ -410,6 +528,7 @@ public class BattleFactoryInstance {
             for (PokemonPreset p : rentalPresets) {
                 Pokemon pokemon = p.getPokemon();
                 if (pokemon == null) continue;
+                me.plascmabue.cobblemonbattlefactory.rct.RCTBattleHelper.stripGimmicks(pokemon);
                 BattleFactory.INSTANCE.logInfo("Adding " + pokemon.getSpecies().getName() + " to available rentals!");
                 availableRentals.add(pokemon);
             }
@@ -601,7 +720,12 @@ public class BattleFactoryInstance {
                             CompoundTag data = swapPokemon.getPersistentData();
                             data.putBoolean("bf_rental", true);
                             swapPokemon.setPersistentData$common(data);
+                            try { swapPokemon.heal(); restoreMovePP(swapPokemon); } catch (Throwable ignored) {}
+                            me.plascmabue.cobblemonbattlefactory.rct.RCTBattleHelper.stripGimmicks(swapPokemon);
                             this.rentalParty.set(finalIndex, swapPokemon);
+                            BattleFactory.LOGGER.info("[BattleFactory] SWAP: rental[{}] → {} (from NPC party idx {}). rentalParty now: {}",
+                                    finalIndex, swapPokemon.getSpecies().getName(), selectedNPCIndex,
+                                    rentalPartyNamesForLog());
                         }
                         hasSwapped.set(true);
                         swapGUI.close();
@@ -675,24 +799,14 @@ public class BattleFactoryInstance {
                 this.currentTier.perBattleRewards() != null ? "present" : "NULL",
                 this.currentTier.perRoundRewards() != null ? "present(size=" + this.currentTier.perRoundRewards().size() + ")" : "NULL",
                 this.round, this.currentTierRound);
-        if (this.currentTier.perBattleRewards() != null && this.round > 0) {
-            List<Reward> earnedRewards = this.currentTier.perBattleRewards().distributeRewards(this.challenger);
-            this.handleRewards(earnedRewards);
-        } else {
-            BattleFactory.LOGGER.info("[BattleFactory] SKIP perBattleRewards (perBattleRewards={}, round={})",
-                    this.currentTier.perBattleRewards() != null, this.round);
-        }
+        // perBattleRewards disabled (random items every round) — only BP per-round + tier-completion rewards kept.
         if (this.currentTier.perRoundRewards() != null && this.round > 0) {
             me.plascmabue.cobblemonbattlefactory.datatypes.rewards.DistributionSection section =
                     this.currentTier.perRoundRewards().get(this.currentTierRound);
-            BattleFactory.LOGGER.info("[BattleFactory] perRoundRewards.get({}) → {}", this.currentTierRound, section != null ? "found" : "NULL (no entry for this round)");
             if (section != null) {
                 List<Reward> earnedRewards = section.distributeRewards(this.challenger);
                 this.handleRewards(earnedRewards);
             }
-        } else {
-            BattleFactory.LOGGER.info("[BattleFactory] SKIP perRoundRewards (perRoundRewards={}, round={})",
-                    this.currentTier.perRoundRewards() != null, this.round);
         }
         if (!noMoreTiers) {
             if (!this.inBonusEncounter) {

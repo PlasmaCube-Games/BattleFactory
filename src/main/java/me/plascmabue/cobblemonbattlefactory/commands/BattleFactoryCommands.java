@@ -396,6 +396,7 @@ public class BattleFactoryCommands {
                     this.bf.logError("[BattleFactory] Preset '" + preset.name() + "' failed to build a Pokemon (unknown species or invalid data). Skipping.");
                     continue;
                 }
+                me.plascmabue.cobblemonbattlefactory.rct.RCTBattleHelper.stripGimmicks(pokemon);
                 this.bf.logInfo("Adding " + pokemon.getSpecies().getName() + " to available rentals!");
                 availableRentals.add(pokemon);
             }
@@ -412,6 +413,7 @@ public class BattleFactoryCommands {
                     this.bf.logError("[BattleFactory] Random Pokemon is null");
                     return 0;
                 }
+                me.plascmabue.cobblemonbattlefactory.rct.RCTBattleHelper.stripGimmicks(pokemon);
                 this.bf.logInfo("Adding " + pokemon.getSpecies().getName() + " to available rentals!");
                 availableRentals.add(pokemon);
             }
