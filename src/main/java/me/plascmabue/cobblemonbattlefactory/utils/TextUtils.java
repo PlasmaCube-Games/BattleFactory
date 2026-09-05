@@ -81,33 +81,43 @@ public class TextUtils {
     }
 
     public static String parse(String text) {
-        return text.replaceAll("%prefix%", BattleFactory.INSTANCE.messagesConfig().prefix);
+        // NOTE: use String.replace (literal), NOT replaceAll (regex) — parse() runs every tick per
+        // BF instance for the overlay; recompiling regexes here made a heavy tick loop (watchdog crash).
+        return text.replace("%prefix%", BattleFactory.INSTANCE.messagesConfig().prefix);
     }
 
     public static String parse(String text, ServerPlayer player) {
         text = TextUtils.parse(text);
-        return text.replaceAll("%player.name%", player.getScoreboardName()).replaceAll("%player.uuid%", player.getStringUUID()).replaceAll("%player.displayName", player.getDisplayName() != null ? player.getDisplayName().getString() : "").replaceAll("%player.cooldown%", TextUtils.hms(BattleFactory.INSTANCE.playerCooldowns.containsKey(player.getUUID()) ? BattleFactory.INSTANCE.playerCooldowns.get(player.getUUID()) / 20L : 0L));
+        return text.replace("%player.name%", player.getScoreboardName()).replace("%player.uuid%", player.getStringUUID()).replace("%player.displayName", player.getDisplayName() != null ? player.getDisplayName().getString() : "").replace("%player.cooldown%", TextUtils.hms(BattleFactory.INSTANCE.playerCooldowns.containsKey(player.getUUID()) ? BattleFactory.INSTANCE.playerCooldowns.get(player.getUUID()) / 20L : 0L));
     }
 
     public static String parse(String text, TierSettings tierSettings) {
         text = TextUtils.parse(text);
-        return text.replaceAll("%tier%", tierSettings.tierName()).replaceAll("%tier.id%", tierSettings.tierID()).replaceAll("%tier.total_rounds%", String.valueOf(tierSettings.battlesForNextTier()));
+        return text.replace("%tier%", tierSettings.tierName()).replace("%tier.id%", tierSettings.tierID()).replace("%tier.total_rounds%", String.valueOf(tierSettings.battlesForNextTier()));
     }
 
     public static String parse(String text, BattleFactoryInstance battleFactoryInstance) {
         text = TextUtils.parse(text, battleFactoryInstance.challenger);
         text = TextUtils.parse(text, battleFactoryInstance.currentTier);
-        return text.replaceAll("%round%", String.valueOf(battleFactoryInstance.round)).replaceAll("%session_timer%", TextUtils.hms((long)battleFactoryInstance.instanceTimer / 20L)).replaceAll("%tier.round%", String.valueOf(battleFactoryInstance.currentTierRound)).replaceAll("%round_timer%", TextUtils.hms((long)battleFactoryInstance.roundTimer / 20L));
+        // %streak% = persistent win streak (carries across runs, resets on a loss) — the "real" combo,
+        // unlike %round% which is capped at the tier size and resets every run.
+        long persistentStreak = 0L;
+        me.plascmabue.cobblemonbattlefactory.datatypes.PlayerData streakData =
+                BattleFactory.INSTANCE.getPlayerData(battleFactoryInstance.challenger);
+        if (streakData != null) {
+            persistentStreak = streakData.winStreak;
+        }
+        return text.replace("%round%", String.valueOf(battleFactoryInstance.round)).replace("%streak%", String.valueOf(persistentStreak)).replace("%session_timer%", TextUtils.hms((long)battleFactoryInstance.instanceTimer / 20L)).replace("%tier.round%", String.valueOf(battleFactoryInstance.currentTierRound)).replace("%round_timer%", TextUtils.hms((long)battleFactoryInstance.roundTimer / 20L));
     }
 
     public static String parse(String text, Pokemon pokemon) {
         text = TextUtils.parse(text);
-        text = text.replaceAll("%pokemon.name%", pokemon.getDisplayName(false).getString()).replaceAll("%pokemon.species%", pokemon.getSpecies().getTranslatedName().getString()).replaceAll("%pokemon.level%", String.valueOf(pokemon.getLevel())).replaceAll("%pokemon.form%", pokemon.getForm().formOnlyShowdownId().substring(0, 1).toUpperCase() + pokemon.getForm().formOnlyShowdownId().substring(1)).replaceAll("%pokemon.ability%", MiscUtilsKt.asTranslated((String)pokemon.getAbility().getDisplayName()).getString()).replaceAll("%pokemon.nature%", MiscUtilsKt.asTranslated((String)pokemon.getNature().getDisplayName()).getString()).replaceAll("%pokemon.ivs.hp%", String.valueOf(pokemon.getIvs().get((Stat)Stats.HP))).replaceAll("%pokemon.ivs.atk%", String.valueOf(pokemon.getIvs().get((Stat)Stats.ATTACK))).replaceAll("%pokemon.ivs.def%", String.valueOf(pokemon.getIvs().get((Stat)Stats.DEFENCE))).replaceAll("%pokemon.ivs.spatk%", String.valueOf(pokemon.getIvs().get((Stat)Stats.SPECIAL_ATTACK))).replaceAll("%pokemon.ivs.spdef%", String.valueOf(pokemon.getIvs().get((Stat)Stats.SPECIAL_DEFENCE))).replaceAll("%pokemon.ivs.spd%", String.valueOf(pokemon.getIvs().get((Stat)Stats.SPEED))).replaceAll("%pokemon.evs.hp%", String.valueOf(pokemon.getEvs().get((Stat)Stats.HP))).replaceAll("%pokemon.evs.atk%", String.valueOf(pokemon.getEvs().get((Stat)Stats.ATTACK))).replaceAll("%pokemon.evs.def%", String.valueOf(pokemon.getEvs().get((Stat)Stats.DEFENCE))).replaceAll("%pokemon.evs.spatk%", String.valueOf(pokemon.getEvs().get((Stat)Stats.SPECIAL_ATTACK))).replaceAll("%pokemon.evs.spdef%", String.valueOf(pokemon.getEvs().get((Stat)Stats.SPECIAL_DEFENCE))).replaceAll("%pokemon.evs.spd%", String.valueOf(pokemon.getEvs().get((Stat)Stats.SPEED))).replaceAll("%pokemon.shiny%", pokemon.getShiny() ? "<yellow>\u2605" : "").replaceAll("%pokemon.gender%", pokemon.getGender().getShowdownName().equalsIgnoreCase("M") ? "<aqua>\u2642" : (pokemon.getGender().getShowdownName().equalsIgnoreCase("F") ? "<light_purple>\u2640" : "<gray>?"));
+        text = text.replace("%pokemon.name%", pokemon.getDisplayName(false).getString()).replace("%pokemon.species%", pokemon.getSpecies().getTranslatedName().getString()).replace("%pokemon.level%", String.valueOf(pokemon.getLevel())).replace("%pokemon.form%", pokemon.getForm().formOnlyShowdownId().substring(0, 1).toUpperCase() + pokemon.getForm().formOnlyShowdownId().substring(1)).replace("%pokemon.ability%", MiscUtilsKt.asTranslated((String)pokemon.getAbility().getDisplayName()).getString()).replace("%pokemon.nature%", MiscUtilsKt.asTranslated((String)pokemon.getNature().getDisplayName()).getString()).replace("%pokemon.ivs.hp%", String.valueOf(pokemon.getIvs().get((Stat)Stats.HP))).replace("%pokemon.ivs.atk%", String.valueOf(pokemon.getIvs().get((Stat)Stats.ATTACK))).replace("%pokemon.ivs.def%", String.valueOf(pokemon.getIvs().get((Stat)Stats.DEFENCE))).replace("%pokemon.ivs.spatk%", String.valueOf(pokemon.getIvs().get((Stat)Stats.SPECIAL_ATTACK))).replace("%pokemon.ivs.spdef%", String.valueOf(pokemon.getIvs().get((Stat)Stats.SPECIAL_DEFENCE))).replace("%pokemon.ivs.spd%", String.valueOf(pokemon.getIvs().get((Stat)Stats.SPEED))).replace("%pokemon.evs.hp%", String.valueOf(pokemon.getEvs().get((Stat)Stats.HP))).replace("%pokemon.evs.atk%", String.valueOf(pokemon.getEvs().get((Stat)Stats.ATTACK))).replace("%pokemon.evs.def%", String.valueOf(pokemon.getEvs().get((Stat)Stats.DEFENCE))).replace("%pokemon.evs.spatk%", String.valueOf(pokemon.getEvs().get((Stat)Stats.SPECIAL_ATTACK))).replace("%pokemon.evs.spdef%", String.valueOf(pokemon.getEvs().get((Stat)Stats.SPECIAL_DEFENCE))).replace("%pokemon.evs.spd%", String.valueOf(pokemon.getEvs().get((Stat)Stats.SPEED))).replace("%pokemon.shiny%", pokemon.getShiny() ? "<yellow>\u2605" : "").replace("%pokemon.gender%", pokemon.getGender().getShowdownName().equalsIgnoreCase("M") ? "<aqua>\u2642" : (pokemon.getGender().getShowdownName().equalsIgnoreCase("F") ? "<light_purple>\u2640" : "<gray>?"));
         Move firstMove = pokemon.getMoveSet().get(0);
         Move secondMove = pokemon.getMoveSet().get(1);
         Move thirdMove = pokemon.getMoveSet().get(2);
         Move fourthMove = pokemon.getMoveSet().get(3);
-        return text.replaceAll("%pokemon.moves.1%", firstMove != null ? firstMove.getDisplayName().getString() : "").replaceAll("%pokemon.moves.2%", secondMove != null ? secondMove.getDisplayName().getString() : "").replaceAll("%pokemon.moves.3%", thirdMove != null ? thirdMove.getDisplayName().getString() : "").replaceAll("%pokemon.moves.4%", fourthMove != null ? fourthMove.getDisplayName().getString() : "");
+        return text.replace("%pokemon.moves.1%", firstMove != null ? firstMove.getDisplayName().getString() : "").replace("%pokemon.moves.2%", secondMove != null ? secondMove.getDisplayName().getString() : "").replace("%pokemon.moves.3%", thirdMove != null ? thirdMove.getDisplayName().getString() : "").replace("%pokemon.moves.4%", fourthMove != null ? fourthMove.getDisplayName().getString() : "");
     }
 
     public static String hms(long raw_time) {

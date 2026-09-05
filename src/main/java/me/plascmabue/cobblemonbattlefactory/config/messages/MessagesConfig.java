@@ -78,7 +78,7 @@ public class MessagesConfig {
     private void fillMessages() {
         this.messages.clear();
         this.messages.put("command_reload", "%prefix% <green>Configuration rechargée !");
-        this.messages.put("command_status", "%prefix% <gray>Série actuelle : <yellow>%round%<gray>. Tier actuel : <yellow>%tier%");
+        this.messages.put("command_status", "%prefix% <gray>Combo : <yellow>%streak%<gray> | Round : <yellow>%round%<gray> | Tier : <yellow>%tier%");
         this.messages.put("battleFactory_stopped", "%prefix% <green>Battle Factory arrêtée !");
         this.messages.put("command_resetPlayerData", "%prefix% <green>Données de %player.name% réinitialisées avec succès !");
         this.messages.put("command_resetLeaderboard", "%prefix% <green>Classement réinitialisé avec succès !");
@@ -95,7 +95,7 @@ public class MessagesConfig {
         this.messages.put("error_waitForCooldown", "%prefix% <red>Tu es encore en cooldown ! %player.cooldown%");
         this.messages.put("error_bannedBagItem", "%prefix% <red>Tu ne peux pas utiliser cet objet dans la Battle Factory !");
         this.messages.put("overlay_nextRoundTimer", "<gray>Prochain round dans : <yellow>%round_timer%");
-        this.messages.put("overlay_currentStatus", "<gray>Round actuel : <yellow>%round% <gray>| Tier : <yellow>%tier% (%tier.round%/%tier.total_rounds%)");
+        this.messages.put("overlay_currentStatus", "<gray>Combo : <yellow>%streak% <gray>| Round : <yellow>%round% <gray>| Tier : <yellow>%tier% (%tier.round%/%tier.total_rounds%)");
         this.messages.put("overlay_bonusEncounter", "<rainbow><b>RENCONTRE BONUS");
         this.messages.put("leaderboard_header", "<gray>--------- Page %page% / %max_pages% ---------");
         this.messages.put("leaderboard_section", "<gray>[%section.placement%] %section.player_name% | Série : %section.highest_streak% (%section.date_achieved%)");

@@ -59,6 +59,10 @@ public class Config {
     public boolean repeatFinalTier = true;
     public boolean tickOfflinePlayerCooldowns = true;
     public int cancelCooldownSeconds = 300;
+    public boolean blockBagItems = true;
+    public boolean progressivePointsEnabled = true;
+    public java.util.List<me.plascmabue.cobblemonbattlefactory.datatypes.StreakRewardBracket> progressivePointsBrackets = new java.util.ArrayList<>();
+    public String progressivePointsCommand = "bp give %player% %amount%";
     public List<Item> bannedBagItems = new ArrayList<Item>();
     public List<String> bannedKeyItems = new ArrayList<String>(List.of("cobblemon:key_stone", "cobblemon:tera_orb", "cobblemon:z_ring", "cobblemon:dynamax_band"));
     public List<TierSettings> tiers = new ArrayList<TierSettings>();
@@ -161,6 +165,45 @@ public class Config {
             this.cancelCooldownSeconds = Math.max(0, root.get("cancel_cooldown_seconds").getAsInt());
         }
         newRoot.addProperty("cancel_cooldown_seconds", (Number)this.cancelCooldownSeconds);
+        if (root.has("block_bag_items")) {
+            this.blockBagItems = root.get("block_bag_items").getAsBoolean();
+        }
+        newRoot.addProperty("block_bag_items", Boolean.valueOf(this.blockBagItems));
+        if (root.has("progressive_points_enabled")) {
+            this.progressivePointsEnabled = root.get("progressive_points_enabled").getAsBoolean();
+        }
+        newRoot.addProperty("progressive_points_enabled", Boolean.valueOf(this.progressivePointsEnabled));
+        this.progressivePointsBrackets = new java.util.ArrayList<>();
+        if (root.has("progressive_points_brackets")) {
+            for (JsonElement bracketElement : root.get("progressive_points_brackets").getAsJsonArray()) {
+                JsonObject bracketObj = bracketElement.getAsJsonObject();
+                int from = bracketObj.get("from").getAsInt();
+                int to = bracketObj.has("to") ? bracketObj.get("to").getAsInt() : -1;
+                int bp = bracketObj.get("bp").getAsInt();
+                this.progressivePointsBrackets.add(new me.plascmabue.cobblemonbattlefactory.datatypes.StreakRewardBracket(from, to, bp));
+            }
+        } else {
+            this.progressivePointsBrackets.add(new me.plascmabue.cobblemonbattlefactory.datatypes.StreakRewardBracket(1, 2, 1));
+            this.progressivePointsBrackets.add(new me.plascmabue.cobblemonbattlefactory.datatypes.StreakRewardBracket(3, 5, 2));
+            this.progressivePointsBrackets.add(new me.plascmabue.cobblemonbattlefactory.datatypes.StreakRewardBracket(6, 7, 3));
+            this.progressivePointsBrackets.add(new me.plascmabue.cobblemonbattlefactory.datatypes.StreakRewardBracket(8, 9, 4));
+            this.progressivePointsBrackets.add(new me.plascmabue.cobblemonbattlefactory.datatypes.StreakRewardBracket(10, -1, 10));
+        }
+        JsonArray bracketsArray = new JsonArray();
+        for (me.plascmabue.cobblemonbattlefactory.datatypes.StreakRewardBracket bracket : this.progressivePointsBrackets) {
+            JsonObject bracketObj = new JsonObject();
+            bracketObj.addProperty("from", (Number)bracket.fromStreak);
+            if (bracket.toStreak >= 0) {
+                bracketObj.addProperty("to", (Number)bracket.toStreak);
+            }
+            bracketObj.addProperty("bp", (Number)bracket.bp);
+            bracketsArray.add((JsonElement)bracketObj);
+        }
+        newRoot.add("progressive_points_brackets", (JsonElement)bracketsArray);
+        if (root.has("progressive_points_command")) {
+            this.progressivePointsCommand = root.get("progressive_points_command").getAsString();
+        }
+        newRoot.addProperty("progressive_points_command", this.progressivePointsCommand);
         JsonArray bannedBagItemsArray = new JsonArray();
         if (root.has("banned_bag_items")) {
             bannedBagItemsArray = root.get("banned_bag_items").getAsJsonArray();

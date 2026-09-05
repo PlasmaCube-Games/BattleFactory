@@ -146,6 +146,8 @@ public class PlayerDataManager {
                 int highestStreak = 0;
                 String highestCompletedTier = "";
                 long cooldownProgress = 0L;
+                long totalWins = 0L;
+                long winStreak = 0L;
                 if (root.has("highest_streak")) {
                     highestStreak = root.get("highest_streak").getAsInt();
                 }
@@ -155,8 +157,14 @@ public class PlayerDataManager {
                 if (root.has("cooldown_progress")) {
                     cooldownProgress = root.get("cooldown_progress").getAsLong();
                 }
+                if (root.has("total_wins")) {
+                    totalWins = root.get("total_wins").getAsLong();
+                }
+                if (root.has("win_streak")) {
+                    winStreak = root.get("win_streak").getAsLong();
+                }
                 BattleFactory.INSTANCE.playerCooldowns.put(player.getUUID(), cooldownProgress);
-                return new PlayerData(player.getUUID(), player.getScoreboardName(), highestStreak, highestCompletedTier, cooldownProgress);
+                return new PlayerData(player.getUUID(), player.getScoreboardName(), highestStreak, highestCompletedTier, cooldownProgress, totalWins, winStreak);
             }
             catch (FileNotFoundException e) {
                 BattleFactory.INSTANCE.logError("[BattleFactory] Failed To Load Player Data File: " + playerFile.getName());
@@ -179,14 +187,18 @@ public class PlayerDataManager {
         int highestStreak = 0;
         String highestCompletedTier = "";
         long cooldownProgress = 0L;
+        long totalWins = 0L;
+        long winStreak = 0L;
         if (data != null) {
             uuid = data.uuid;
             username = data.username;
             highestStreak = data.highestStreak;
             highestCompletedTier = data.highestCompletedTier;
             cooldownProgress = data.cooldownProgress;
+            totalWins = data.totalWins;
+            winStreak = data.winStreak;
         }
-        return PlayerDataManager.savePlayerData(new PlayerData(uuid, username, highestStreak, highestCompletedTier, cooldownProgress));
+        return PlayerDataManager.savePlayerData(new PlayerData(uuid, username, highestStreak, highestCompletedTier, cooldownProgress, totalWins, winStreak));
     }
 
     public static PlayerData savePlayerData(PlayerData data) {
@@ -196,6 +208,8 @@ public class PlayerDataManager {
         int highestStreak = data.highestStreak;
         String highestCompletedTier = data.highestCompletedTier;
         long cooldownProgress = data.cooldownProgress;
+        long totalWins = data.totalWins;
+        long winStreak = data.winStreak;
         File rootFolder = FabricLoader.getInstance().getConfigDir().resolve("BattleFactory").toFile();
         if (!rootFolder.exists()) {
             rootFolder.mkdir();
@@ -210,6 +224,8 @@ public class PlayerDataManager {
         root.addProperty("highest_streak", (Number)highestStreak);
         root.addProperty("highest_completed_tier", highestCompletedTier);
         root.addProperty("cooldown_progress", (Number)cooldownProgress);
+        root.addProperty("total_wins", (Number)totalWins);
+        root.addProperty("win_streak", (Number)winStreak);
         try {
             playerFile.delete();
             playerFile.createNewFile();

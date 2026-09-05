@@ -93,6 +93,7 @@ implements ModInitializer {
             LOGGER.info("[BattleFactory] Loaded {} tier(s) from config", this.config != null ? this.config.tiers.size() : 0);
             EventManager.registerBattleEvents();
             EventManager.registerRightClickEvents();
+            me.plascmabue.cobblemonbattlefactory.placeholders.LeaderboardHologram.register();
         });
         ServerTickEvents.END_SERVER_TICK.register(server -> {
             try {

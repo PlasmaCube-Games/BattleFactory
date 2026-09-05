@@ -50,3 +50,19 @@ run/
 *.log
 /bf.log
 /build.log
+# === PlasmaCube sync ignores ===
+.gradle/
+build/
+out/
+bin/
+run/
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+*.zip
+*.log
+.idea/
+*.iml
+.DS_Store
+.env
+*.env
+secrets.properties

@@ -64,6 +64,9 @@ dependencies {
     modImplementation(include("net.kyori:adventure-platform-fabric:${project.properties["adventure_platform_version"]}")!!)
     modImplementation(include("me.lucko:fabric-permissions-api:${project.properties["fabric_permissions_api_version"]}")!!)
 
+    // Text Placeholder API (eu.pb4) — soft dep for the streak-leaderboard hologram (provided at runtime by HoloDisplays); guarded by try/catch.
+    modImplementation("eu.pb4:placeholder-api:2.4.2+1.21")
+
     compileOnly("net.luckperms:api:5.4")
 }
 

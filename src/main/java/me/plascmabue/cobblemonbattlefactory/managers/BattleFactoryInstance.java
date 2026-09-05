@@ -112,6 +112,15 @@ public class BattleFactoryInstance {
     public int round;
     public int roundTimer;
     public boolean roundTransition = false;
+    /**
+     * True once the challenger has cleared every battle of the tier (no next tier to advance to).
+     * {@link #stopInstance()} decrements {@code round} because a run normally ends mid-round (loss,
+     * quit, disconnect) where the current round was started but not won. A full clear is the one case
+     * where the last round WAS won, so the decrement must be skipped or the streak is off by one.
+     */
+    public boolean runCompleted = false;
+    /** Consecutive ticks the active battle has been missing from the registry (orphan-battle watchdog). */
+    public int missingBattleTicks = 0;
     public boolean inBonusEncounter = false;
     public List<Reward> collectedRewards = new ArrayList<Reward>();
     /** Trainer-gimmick items (Tera Orb, Dynamax Band, Mega Bracelet, Z-Ring) stashed during a BF run. */
@@ -220,24 +229,19 @@ public class BattleFactoryInstance {
     public void stopInstance() {
         PokemonBattle battle;
         restoreTrainerItems();
-        if (!this.roundTransition) {
+        if (!this.roundTransition && !this.runCompleted) {
             --this.round;
         }
+        BattleFactory.LOGGER.info("[BattleFactory] stopInstance: player={} finalStreak={} completed={} transition={}",
+                this.challenger.getScoreboardName(), this.round, this.runCompleted, this.roundTransition);
         this.roundTransition = false;
         PlayerData data = BattleFactory.INSTANCE.getPlayerData(this.challenger);
         if (data != null) {
-            if (this.round > data.highestStreak) {
-                data.highestStreak = this.round;
-                data.highestCompletedTier = this.highestCompletedTier;
-                LeaderboardSection section = LeaderboardManager.getLeaderboardSection(this.challenger.getUUID());
-                if (section == null) {
-                    section = new LeaderboardSection(LeaderboardManager.leaderboard.size() + 1, this.challenger.getUUID(), this.challenger.getScoreboardName(), data.highestStreak, LocalDateTime.now());
-                }
-                section.highestStreak = data.highestStreak;
-                section.dateAchieved = LocalDateTime.now();
-                LeaderboardManager.updateLeaderboardSection(section);
-                LeaderboardManager.leaderboard = LeaderboardManager.sortLeaderboard(new ArrayList<LeaderboardSection>(LeaderboardManager.leaderboard));
-                LeaderboardManager.saveLeaderboard();
+            // Fallback leaderboard update from the per-run round count. Only meaningful when progressive
+            // points are OFF; when they're ON, the persistent win streak (which can span several runs and
+            // is the value players actually chase) is already recorded live in awardProgressivePoints().
+            if (!this.bf.config().progressivePointsEnabled) {
+                this.recordStreakToLeaderboard(this.round);
             }
             data.cooldownProgress = PermissionsHelper.getBaseCooldown(this.challenger);
             this.bf.logInfo("[BattleFactory] New Cooldown: " + data.cooldownProgress);
@@ -392,6 +396,23 @@ public class BattleFactoryInstance {
 
     public void removeNpc() {
         if (this.currentNPC != null) {
+            // Discard any pokemon the NPC still has sent out. On an abnormal battle end
+            // (Showdown error / player flee) Cobblemon never recalls them, leaving a
+            // wild-looking, killable, item-dropping orphan entity behind.
+            try {
+                com.cobblemon.mod.common.api.storage.party.NPCPartyStore party = this.currentNPC.getParty();
+                if (party != null) {
+                    for (Pokemon pokemon : party) {
+                        if (pokemon == null) continue;
+                        PokemonEntity pe = pokemon.getEntity();
+                        if (pe != null) {
+                            pe.remove(Entity.RemovalReason.DISCARDED);
+                        }
+                    }
+                }
+            } catch (Throwable t) {
+                BattleFactory.LOGGER.warn("[BattleFactory] removeNpc: failed to discard NPC pokemon entities: {}", t.getMessage());
+            }
             this.currentNPC.remove(Entity.RemovalReason.DISCARDED);
             this.currentNPC = null;
         }
@@ -746,6 +767,73 @@ public class BattleFactoryInstance {
         }
     }
 
+    // Resolve the BP for a given win streak from the config brackets (first matching bracket wins).
+    private static int bpForStreak(me.plascmabue.cobblemonbattlefactory.config.Config cfg, long streak) {
+        for (me.plascmabue.cobblemonbattlefactory.datatypes.StreakRewardBracket b : cfg.progressivePointsBrackets) {
+            if (streak >= b.fromStreak && (b.toStreak < 0 || streak <= b.toStreak)) {
+                return b.bp;
+            }
+        }
+        return 0;
+    }
+
+    /**
+     * Record a streak value on the public leaderboard/hologram if it beats the player's stored best.
+     * Called live on each win with the persistent win streak (so the peak is captured before a loss
+     * resets it), and as a fallback from stopInstance() with the per-run round when progressive points
+     * are disabled. Only ever raises {@code highestStreak}, never lowers it.
+     */
+    private void recordStreakToLeaderboard(int streak) {
+        PlayerData data = BattleFactory.INSTANCE.getPlayerData(this.challenger);
+        if (data == null || streak <= data.highestStreak) {
+            return;
+        }
+        data.highestStreak = streak;
+        if (!this.highestCompletedTier.isEmpty()) {
+            data.highestCompletedTier = this.highestCompletedTier;
+        }
+        BattleFactory.INSTANCE.updatePlayerData(this.challenger, data);
+        LeaderboardSection section = LeaderboardManager.getLeaderboardSection(this.challenger.getUUID());
+        if (section == null) {
+            section = new LeaderboardSection(LeaderboardManager.leaderboard.size() + 1, this.challenger.getUUID(), this.challenger.getScoreboardName(), data.highestStreak, LocalDateTime.now());
+        }
+        section.name = this.challenger.getScoreboardName();
+        section.highestStreak = data.highestStreak;
+        section.dateAchieved = LocalDateTime.now();
+        LeaderboardManager.updateLeaderboardSection(section);
+        LeaderboardManager.leaderboard = LeaderboardManager.sortLeaderboard(new ArrayList<LeaderboardSection>(LeaderboardManager.leaderboard));
+        LeaderboardManager.saveLeaderboard();
+    }
+
+    private void awardProgressivePoints() {
+        me.plascmabue.cobblemonbattlefactory.config.Config cfg = this.bf.config();
+        long streak;
+        PlayerData data = BattleFactory.INSTANCE.getPlayerData(this.challenger);
+        if (data != null) {
+            data.winStreak += 1L;   // persistent win streak, reset to 0 on a loss (see EventManager)
+            data.totalWins += 1L;   // lifetime wins stat
+            streak = data.winStreak;
+            BattleFactory.INSTANCE.updatePlayerData(this.challenger, data);
+            PlayerDataManager.savePlayerData(this.challenger);
+            // Leaderboard/hologram tracks the persistent win streak — record its peak now, while it's
+            // still non-zero (a loss zeroes it before stopInstance runs).
+            this.recordStreakToLeaderboard((int) data.winStreak);
+        } else {
+            streak = this.round;
+        }
+        // BP is looked up from the config streak brackets (win-streak value -> BP).
+        int total = bpForStreak(cfg, streak);
+        BattleFactory.LOGGER.info("[BattleFactory] Progressive points: player={} streak={} total={}",
+                this.challenger.getScoreboardName(), streak, total);
+        if (total <= 0) {
+            return;
+        }
+        String command = cfg.progressivePointsCommand.replace("%amount%", String.valueOf(total));
+        new me.plascmabue.cobblemonbattlefactory.datatypes.rewards.CommandReward(
+                java.util.UUID.randomUUID(), "progressive_points", "command", java.util.List.of(command)
+        ).grant_reward(this.challenger);
+    }
+
     public void continueNextRound(boolean fromBonusEncounter) {
         BattleFactory.LOGGER.info("[BattleFactory] continueNextRound: player={} tier={} round={} tierRound={} fromBonus={}",
                 this.challenger.getScoreboardName(), this.currentTier.tierID(), this.round, this.currentTierRound, fromBonusEncounter);
@@ -793,19 +881,29 @@ public class BattleFactoryInstance {
                 }
             } else {
                 noMoreTiers = true;
+                // Tier cleared and nothing after it: the last round was won, so stopInstance must not
+                // roll `round` back like it does for a loss/quit.
+                this.runCompleted = true;
+                this.highestCompletedTier = this.currentTier.tierID();
             }
         }
         BattleFactory.LOGGER.info("[BattleFactory] reward check: perBattleRewards={} perRoundRewards={} round={} tierRound={}",
                 this.currentTier.perBattleRewards() != null ? "present" : "NULL",
                 this.currentTier.perRoundRewards() != null ? "present(size=" + this.currentTier.perRoundRewards().size() + ")" : "NULL",
                 this.round, this.currentTierRound);
-        // perBattleRewards disabled (random items every round) — only BP per-round + tier-completion rewards kept.
-        if (this.currentTier.perRoundRewards() != null && this.round > 0) {
-            me.plascmabue.cobblemonbattlefactory.datatypes.rewards.DistributionSection section =
-                    this.currentTier.perRoundRewards().get(this.currentTierRound);
-            if (section != null) {
-                List<Reward> earnedRewards = section.distributeRewards(this.challenger);
-                this.handleRewards(earnedRewards);
+        // BP per win = persistent win streak (× perWin) + milestone bonus. The streak carries across runs
+        // (finishing a run keeps it) and resets to 0 only on a loss (see EventManager). When progressive
+        // points are disabled, fall back to the config per_round_rewards table.
+        if (this.round > 0) {
+            if (this.bf.config().progressivePointsEnabled) {
+                this.awardProgressivePoints();
+            } else if (this.currentTier.perRoundRewards() != null) {
+                me.plascmabue.cobblemonbattlefactory.datatypes.rewards.DistributionSection section =
+                        this.currentTier.perRoundRewards().get(this.currentTierRound);
+                if (section != null) {
+                    List<Reward> earnedRewards = section.distributeRewards(this.challenger);
+                    this.handleRewards(earnedRewards);
+                }
             }
         }
         if (!noMoreTiers) {
@@ -816,13 +914,6 @@ public class BattleFactoryInstance {
             ++this.round;
             this.roundTimer = Math.max(3, this.bf.config().secondsBetweenBattles) * 20;
             this.roundTransition = true;
-            this.bf.sendHudUpdate(this.challenger, new me.plascmabue.cobblemonbattlefactory.network.BattleFactoryHudPayload(
-                    true,
-                    this.currentTier != null ? this.currentTier.tierName() : "",
-                    this.round,
-                    this.round,
-                    this.roundTimer
-            ));
             Location location = null;
             if (!this.inBonusEncounter) {
                 for (int i = this.currentTierRound; i > 0; --i) {

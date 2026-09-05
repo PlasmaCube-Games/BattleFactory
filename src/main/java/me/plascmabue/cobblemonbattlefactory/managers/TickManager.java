@@ -7,6 +7,7 @@
  */
 package me.plascmabue.cobblemonbattlefactory.managers;
 
+import com.cobblemon.mod.common.battles.BattleRegistry;
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.Map;
@@ -19,9 +20,53 @@ import net.minecraft.server.level.ServerPlayer;
 
 public class
 TickManager {
+    // Maintenance counter for the periodic instance-count log / offline purge (see tickTimers).
+    private static int maintenanceTick = 0;
+
     public static void tickTimers() throws ConcurrentModificationException {
+        // Périodique (toutes les ~30 s) : on log le nombre d'instances actives et on purge celles
+        // dont le joueur est hors-ligne. L'overlay tourne à chaque tick PAR instance ; une instance
+        // « morte » qui traîne = coût CPU permanent (cf. crash watchdog max-tick-time).
+        if (++maintenanceTick >= 600) {
+            maintenanceTick = 0;
+            int count = BattleFactory.INSTANCE.battleFactoryInstances.size();
+            if (count > 0) {
+                BattleFactory.LOGGER.info("[BattleFactory] Instances actives: {}", count);
+            }
+            if (count > 25) {
+                BattleFactory.LOGGER.warn("[BattleFactory] Beaucoup d'instances BF actives ({}) — fuite possible ?", count);
+            }
+            ArrayList<ServerPlayer> offline = new ArrayList<ServerPlayer>();
+            for (BattleFactoryInstance instance : BattleFactory.INSTANCE.battleFactoryInstances) {
+                ServerPlayer challenger = instance.challenger;
+                if (challenger == null || BattleFactory.INSTANCE.server().getPlayerList().getPlayer(challenger.getUUID()) == null) {
+                    if (challenger != null) offline.add(challenger);
+                }
+            }
+            for (ServerPlayer p : offline) {
+                BattleFactory.LOGGER.warn("[BattleFactory] Purge instance orpheline (joueur hors-ligne): {}", p.getScoreboardName());
+                BattleFactory.INSTANCE.stopBattleFactoryInstance(p);
+            }
+        }
         for (BattleFactoryInstance battleFactoryInstance : BattleFactory.INSTANCE.battleFactoryInstances) {
             ++battleFactoryInstance.instanceTimer;
+            // Orphan-battle watchdog: if we have an active battle id but the battle is gone from
+            // the registry (Showdown error / player flee) while not transitioning, the BATTLE_VICTORY
+            // handler never ran. Clean up the leftover NPC pokemon and end the run as a loss.
+            if (!battleFactoryInstance.roundTransition
+                    && battleFactoryInstance.currentBattleID != null
+                    && BattleRegistry.getBattle(battleFactoryInstance.currentBattleID) == null) {
+                if (++battleFactoryInstance.missingBattleTicks >= 3) {
+                    BattleFactory.LOGGER.warn("[BattleFactory] Orphan battle detected for {} (battleId={} gone) — forcing cleanup.",
+                            battleFactoryInstance.challenger.getScoreboardName(), battleFactoryInstance.currentBattleID);
+                    battleFactoryInstance.currentBattleID = null;
+                    battleFactoryInstance.removeNpc();
+                    BattleFactory.INSTANCE.removeAfterTicks.put(battleFactoryInstance.challenger, 5L);
+                    continue;
+                }
+            } else {
+                battleFactoryInstance.missingBattleTicks = 0;
+            }
             if (battleFactoryInstance.roundTransition) {
                 --battleFactoryInstance.roundTimer;
                 battleFactoryInstance.challenger.displayClientMessage(TextUtils.deserialize(TextUtils.parse(BattleFactory.INSTANCE.messagesConfig().getMessage("overlay_nextRoundTimer"), battleFactoryInstance)), true);
