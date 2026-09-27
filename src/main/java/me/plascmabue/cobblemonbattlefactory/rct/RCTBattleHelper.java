@@ -2,8 +2,12 @@ package me.plascmabue.cobblemonbattlefactory.rct;
 
 import com.cobblemon.mod.common.battles.ActiveBattlePokemon;
 import com.cobblemon.mod.common.battles.BattleSide;
+import com.cobblemon.mod.common.battles.DefaultActionResponse;
+import com.cobblemon.mod.common.battles.PassActionResponse;
 import com.cobblemon.mod.common.battles.ShowdownActionResponse;
 import com.cobblemon.mod.common.battles.ShowdownMoveset;
+import com.cobblemon.mod.common.battles.SwitchActionResponse;
+import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.gitlab.srcmc.rctapi.api.RCTApi;
@@ -52,9 +56,10 @@ public final class RCTBattleHelper {
      * Showdown sent or what the GimmicksMap says.
      */
     public static final class BfNoGimmickAI extends RCTBattleAI {
+        // NB: le 5e paramètre est forceSwitch (Pokémon K.O. à remplacer), PAS isMega.
         @Override
         public ShowdownActionResponse choose(ActiveBattlePokemon active, PokemonBattle battle,
-                                             BattleSide side, ShowdownMoveset moveset, boolean isMega) {
+                                             BattleSide side, ShowdownMoveset moveset, boolean forceSwitch) {
             if (moveset != null) {
                 try {
                     moveset.setCanDynamax(false);
@@ -67,8 +72,68 @@ public final class RCTBattleHelper {
                     BattleFactory.LOGGER.warn("[BattleFactory] BfNoGimmickAI clear failed: {}", t.getMessage());
                 }
             }
-            return super.choose(active, battle, side, moveset, isMega);
+            if (forceSwitch) {
+                BattleFactory.LOGGER.info("[BattleFactory] IA : switch forcé demandé (Pokémon K.O. à remplacer) — choix en cours.");
+            }
+            try {
+                ShowdownActionResponse resp = super.choose(active, battle, side, moveset, forceSwitch);
+                if (forceSwitch) {
+                    BattleFactory.LOGGER.info("[BattleFactory] IA : remplaçant choisi = {}.", resp);
+                }
+                // Filet « NPC qui n'attaque pas » : rctapi renvoie PassActionResponse quand aucun coup n'est
+                // jugé jouable (moveset.moves filtré par canBeUsed vide). Sur un tour normal avec un Pokémon
+                // vivant, passer = rester planté. On force DefaultActionResponse (Showdown choisit un coup) +
+                // diagnostic sur l'état des coups.
+                if (!forceSwitch && resp instanceof PassActionResponse && active != null && active.hasPokemon()) {
+                    BattleFactory.LOGGER.warn("[BattleFactory] IA allait PASSER avec un Pokémon vivant (ne pas attaquer) — moves=[{}] → DefaultActionResponse forcé.",
+                            describeMoves(moveset));
+                    return new DefaultActionResponse();
+                }
+                return resp;
+            } catch (Throwable t) {
+                // Si l'IA plante en choisissant (typique d'un switch forcé après double K.O.), Cobblemon reste
+                // bloqué : AIBattleActor.onChoiceRequested() n'attrape QUE IllegalActionChoiceException, donc
+                // toute autre exception laisse l'acteur sans réponse → softlock. Réponse valide de repli.
+                BattleFactory.LOGGER.error("[BattleFactory] BfNoGimmickAI.choose a échoué (forceSwitch=" + forceSwitch + ") — réponse de repli.", t);
+                return fallbackResponse(active, moveset, forceSwitch);
+            }
         }
+    }
+
+    /** Diagnostic : liste les coups du moveset avec canBeUsed/mustBeUsed (pour comprendre pourquoi rctapi
+     *  ne propose aucun coup → NPC qui passe). */
+    private static String describeMoves(ShowdownMoveset moveset) {
+        if (moveset == null) return "moveset=null";
+        try {
+            StringBuilder sb = new StringBuilder();
+            for (var m : moveset.moves) {
+                if (m == null) continue;
+                if (sb.length() > 0) sb.append(", ");
+                sb.append(m.id).append("(usable=").append(m.canBeUsed()).append(",must=").append(m.mustBeUsed()).append(")");
+            }
+            return sb.length() == 0 ? "aucun coup" : sb.toString();
+        } catch (Throwable t) {
+            return "err:" + t.getMessage();
+        }
+    }
+
+    /** Réponse de repli quand l'IA plante : switch vers le 1er Pokémon envoyable si un remplacement est
+     *  exigé, sinon on passe. Garantit une réponse VALIDE pour que Cobblemon ne se bloque pas. */
+    private static ShowdownActionResponse fallbackResponse(ActiveBattlePokemon active, ShowdownMoveset moveset,
+                                                           boolean forceSwitch) {
+        try {
+            if (forceSwitch && active != null) {
+                for (BattlePokemon bp : active.getActor().getPokemonList()) {
+                    if (bp == null || !bp.canBeSentOut()) continue;
+                    SwitchActionResponse sw = new SwitchActionResponse(bp.getUuid());
+                    if (sw.isValid(active, moveset, true)) {
+                        BattleFactory.LOGGER.warn("[BattleFactory] Repli IA : switch forcé vers {}.", bp.getName().getString());
+                        return sw;
+                    }
+                }
+            }
+        } catch (Throwable ignored) {}
+        return PassActionResponse.INSTANCE;
     }
 
     /**
@@ -173,6 +238,12 @@ public final class RCTBattleHelper {
             );
             BattleFactory.LOGGER.info("[BattleFactory] RCT battle started: battleId={} player={} npc={}",
                     battleId, player.getScoreboardName(), npcDisplayName);
+            me.plascmabue.cobblemonbattlefactory.debug.BattleLog.log("========================================");
+            me.plascmabue.cobblemonbattlefactory.debug.BattleLog.log(
+                    "COMBAT START battleId={} joueur={} npc={} taille={}",
+                    battleId, player.getScoreboardName(),
+                    (npcDisplayName != null ? npcDisplayName : "Trainer"),
+                    (npcTeam != null ? npcTeam.length : 0));
             return battleId;
         } catch (Throwable t) {
             BattleFactory.LOGGER.error("[BattleFactory] RCT startRentalBattle failed", t);

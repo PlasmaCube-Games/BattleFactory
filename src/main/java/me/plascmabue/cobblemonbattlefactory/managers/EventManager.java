@@ -136,6 +136,8 @@ public class EventManager {
                 ServerPlayer player;
                 PlayerBattleActor playerBattleActor;
                 if (battleFactoryInstance.currentBattleID == null || !battle.getBattleId().equals(battleFactoryInstance.currentBattleID)) continue;
+                boolean playerWon = battleVictoryEvent.getWinners().stream().anyMatch(w -> w instanceof PlayerBattleActor);
+                me.plascmabue.cobblemonbattlefactory.managers.TickManager.dumpBattleLog(battle, playerWon ? "VICTOIRE" : "DÉFAITE");
                 for (BattleActor winner : battleVictoryEvent.getWinners()) {
                     if (!(winner instanceof PlayerBattleActor)) continue;
                     playerBattleActor = (PlayerBattleActor)winner;

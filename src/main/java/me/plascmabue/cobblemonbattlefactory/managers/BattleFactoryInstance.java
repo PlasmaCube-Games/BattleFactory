@@ -121,6 +121,10 @@ public class BattleFactoryInstance {
     public boolean runCompleted = false;
     /** Consecutive ticks the active battle has been missing from the registry (orphan-battle watchdog). */
     public int missingBattleTicks = 0;
+    /** Ticks pendant lesquels le n° de tour n'a pas avancé (watchdog anti-softlock double K.O.). */
+    public int aiStuckTicks = 0;
+    /** Dernier n° de tour observé (détection de tour figé ; Integer null = pas encore vu). */
+    public Integer lastSeenTurn = null;
     public boolean inBonusEncounter = false;
     public List<Reward> collectedRewards = new ArrayList<Reward>();
     /** Trainer-gimmick items (Tera Orb, Dynamax Band, Mega Bracelet, Z-Ring) stashed during a BF run. */
