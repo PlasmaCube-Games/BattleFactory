@@ -143,15 +143,35 @@ TickManager {
         return false;
     }
 
-    /** 1er Pokémon du banc encore envoyable pour cet acteur (null si aucun). */
-    private static com.cobblemon.mod.common.battles.pokemon.BattlePokemon firstSendable(
+    /** Construit les réponses forcées d'un acteur, DOUBLES-AWARE : une réponse PAR slot actif (sinon
+     *  setActionResponses plante en IndexOutOfBounds avec 2 actifs et 1 réponse). Switch forcé → switch vers
+     *  un Pokémon de banc distinct (sinon Pass) ; autre slot d'une requête de switch → Pass ; move → Default. */
+    private static java.util.List<com.cobblemon.mod.common.battles.ShowdownActionResponse> buildForced(
             com.cobblemon.mod.common.api.battles.model.actor.BattleActor a) {
-        try {
-            for (var bp : a.getPokemonList()) {
-                if (bp != null && bp.canBeSentOut()) return bp;
+        java.util.List<Boolean> fs = null;
+        java.util.List<?> active = null;
+        try { var req = a.getRequest(); if (req != null) { fs = req.getForceSwitch(); active = req.getActive(); } } catch (Throwable ignored) {}
+        int slots = 1;
+        if (fs != null && !fs.isEmpty()) slots = fs.size();
+        else if (active != null && !active.isEmpty()) slots = active.size();
+        java.util.List<com.cobblemon.mod.common.battles.pokemon.BattlePokemon> bench = new ArrayList<>();
+        try { for (var bp : a.getPokemonList()) if (bp != null && bp.canBeSentOut()) bench.add(bp); } catch (Throwable ignored) {}
+        boolean anyForce = false;
+        if (fs != null) for (Boolean x : fs) if (Boolean.TRUE.equals(x)) { anyForce = true; break; }
+        int bi = 0;
+        java.util.List<com.cobblemon.mod.common.battles.ShowdownActionResponse> out = new ArrayList<>(slots);
+        for (int i = 0; i < slots; i++) {
+            boolean slotForce = fs != null && i < fs.size() && Boolean.TRUE.equals(fs.get(i));
+            if (slotForce) {
+                if (bi < bench.size()) out.add(new com.cobblemon.mod.common.battles.SwitchActionResponse(bench.get(bi++).getUuid()));
+                else out.add(com.cobblemon.mod.common.battles.PassActionResponse.INSTANCE);
+            } else if (anyForce) {
+                out.add(com.cobblemon.mod.common.battles.PassActionResponse.INSTANCE);
+            } else {
+                out.add(new com.cobblemon.mod.common.battles.DefaultActionResponse());
             }
-        } catch (Throwable ignored) {}
-        return null;
+        }
+        return out;
     }
 
     /** Débloque un combat dont le tour ne progresse plus, en imposant UNIQUEMENT les réponses manquantes
@@ -195,28 +215,16 @@ TickManager {
 
             for (var a : pending) {
                 boolean isAI = a instanceof com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
-                boolean forceSwitch = hasForceSwitch(a);
                 if (isAI) {
-                    com.cobblemon.mod.common.battles.ShowdownActionResponse resp = null;
-                    if (forceSwitch) {
-                        var pick = firstSendable(a);
-                        if (pick != null) resp = new com.cobblemon.mod.common.battles.SwitchActionResponse(pick.getUuid());
-                    }
-                    if (resp == null) resp = new com.cobblemon.mod.common.battles.DefaultActionResponse();
-                    a.setActionResponses(java.util.List.of(resp));
+                    a.setActionResponses(buildForced(a));
                     BattleFactory.LOGGER.warn("[BattleFactory] FORCE IA (tour figé) joueur={} battleId={} forceSwitch={}",
-                            inst.challenger.getScoreboardName(), inst.currentBattleID, forceSwitch);
+                            inst.challenger.getScoreboardName(), inst.currentBattleID, hasForceSwitch(a));
                     me.plascmabue.cobblemonbattlefactory.debug.BattleLog.log(
-                            "FORCE IA actor='{}' forceSwitch={}", a.getName().getString(), forceSwitch);
-                } else if (playerForceSwitch && forceSwitch) {
-                    var pick = firstSendable(a);
-                    if (pick != null) {
-                        a.setActionResponses(java.util.List.of(
-                                new com.cobblemon.mod.common.battles.SwitchActionResponse(pick.getUuid())));
-                        me.plascmabue.cobblemonbattlefactory.debug.BattleLog.log(
-                                "FORCE JOUEUR switch actor='{}' → {} (vrai double-K.O., écran non ouvert)",
-                                a.getName().getString(), pick.getName().getString());
-                    }
+                            "FORCE IA actor='{}' forceSwitch={}", a.getName().getString(), hasForceSwitch(a));
+                } else if (playerForceSwitch && hasForceSwitch(a)) {
+                    a.setActionResponses(buildForced(a));
+                    me.plascmabue.cobblemonbattlefactory.debug.BattleLog.log(
+                            "FORCE JOUEUR actor='{}' (vrai double-K.O., écran non ouvert)", a.getName().getString());
                 }
             }
             b.checkForInputDispatch();
