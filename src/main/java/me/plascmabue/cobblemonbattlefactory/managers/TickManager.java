@@ -151,9 +151,15 @@ TickManager {
         java.util.List<Boolean> fs = null;
         java.util.List<?> active = null;
         try { var req = a.getRequest(); if (req != null) { fs = req.getForceSwitch(); active = req.getActive(); } } catch (Throwable ignored) {}
-        int slots = 1;
-        if (fs != null && !fs.isEmpty()) slots = fs.size();
-        else if (active != null && !active.isEmpty()) slots = active.size();
+int activeReq = (active != null) ? active.size() : 0;
+        int fsSize = (fs != null) ? fs.size() : 0;
+        int activePk = 0;
+        try { var ap = a.getActivePokemon(); if (ap != null) activePk = ap.size(); } catch (Throwable ignored) {}
+        // iterate() dispatche max(active.size, forceSwitch.size) fois en indexant responses[] : il FAUT au
+        // moins autant de reponses, sinon IndexOutOfBounds -> Showdown desync -> gel definitif. On cale sur le
+        // nb de slots physiques (activePokemon) qui majore les deux et satisfait la validation de setActionResponses.
+        int slots = Math.max(Math.max(activePk, activeReq), fsSize);
+        if (slots < 1) slots = 1;
         java.util.List<com.cobblemon.mod.common.battles.pokemon.BattlePokemon> bench = new ArrayList<>();
         try { for (var bp : a.getPokemonList()) if (bp != null && bp.canBeSentOut()) bench.add(bp); } catch (Throwable ignored) {}
         boolean anyForce = false;
