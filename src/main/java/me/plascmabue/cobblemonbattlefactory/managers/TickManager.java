@@ -194,43 +194,56 @@ int activeReq = (active != null) ? active.size() : 0;
      *  dispatcherait aussitôt et annulerait la requête du joueur), puis on force SEULEMENT l'IA. */
     private static void resolveStuck(BattleFactoryInstance inst, com.cobblemon.mod.common.api.battles.model.PokemonBattle b) {
         try {
+            // « Bloqueur » = acteur avec une requête VIVANTE (non-wait) et aucune réponse posée. On détecte par la
+            // REQUÊTE, PAS par mustChoose : le deadlock « menu fight mais impossible d'attaquer » a les DEUX camps
+            // mustChoose=false responses=0 active!=null (Cobblemon n'a lancé le choix de personne). wait=true =
+            // attend l'autre camp → ignoré.
             java.util.List<com.cobblemon.mod.common.api.battles.model.actor.BattleActor> pending = new ArrayList<>();
-            boolean anyAiPending = false;
+            boolean anyAiBlocker = false, anyPlayerLimbo = false;
+            boolean aiForceSwitch = false, playerForceSwitch = false;
             for (var a : b.getActors()) {
-                boolean hasResp = a.getResponses() != null && !a.getResponses().isEmpty();
-                if (hasResp) continue;
+                var resp = a.getResponses();
+                if (resp != null && !resp.isEmpty()) continue;      // a déjà répondu
+                var req = a.getRequest();
+                if (req == null) continue;
+                boolean wait = false;
+                try { wait = req.getWait(); } catch (Throwable ignored) {}
+                if (wait) continue;                                 // attend l'autre camp → OK
+                pending.add(a);
+                boolean isAI = a instanceof com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
                 boolean mustChoose = false;
                 try { mustChoose = a.getMustChoose(); } catch (Throwable ignored) {}
-                if (!mustChoose && !hasForceSwitch(a)) continue;
-                pending.add(a);
-                if (a instanceof com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor) anyAiPending = true;
+                boolean fsw = hasForceSwitch(a);
+                if (isAI) { anyAiBlocker = true; if (fsw) aiForceSwitch = true; }
+                else { if (!mustChoose) anyPlayerLimbo = true; if (fsw) playerForceSwitch = true; }
             }
-            if (!anyAiPending) return;  // seul le joueur est en attente → on le laisse choisir
+            // Si le SEUL bloqueur est un joueur qui choisit normalement (mustChoose=true), il réfléchit → on ne
+            // touche à RIEN. On n'agit que si une IA est coincée (elle répond normalement en instantané) OU si un
+            // joueur est en limbo (mustChoose=false mais requête vivante = le bug du menu fight figé).
+            if (pending.isEmpty() || (!anyAiBlocker && !anyPlayerLimbo)) return;
 
-            // VRAI DOUBLE-K.O. = le joueur AUSSI a un switch forcé en attente → Cobblemon n'ouvre PAS son
-            // écran de switch (gel infini). On force alors AUSSI son switch. Sur un KO normal (seul le joueur
-            // forceSwitch, l'IA en wait) on ne force JAMAIS le joueur : son écran s'ouvre bien.
-            boolean playerForceSwitch = false;
-            for (var a : pending) {
-                if (!(a instanceof com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor) && hasForceSwitch(a)) {
-                    playerForceSwitch = true; break;
-                }
-            }
+            // VRAI DOUBLE-K.O. = joueur ET IA ont un switch forcé → Cobblemon n'ouvre pas l'écran du joueur →
+            // on force aussi son switch. KO SIMPLE (joueur forceSwitch seul, IA en wait) → JAMAIS forcer : reprompt.
+            boolean trueDoubleKO = playerForceSwitch && aiForceSwitch;
 
+            // setMustChoose(true) sur tous AVANT de forcer l'IA (sinon le dispatch IA-seul annule la requête joueur).
             for (var a : pending) { try { a.setMustChoose(true); } catch (Throwable ignored) {} }
 
             for (var a : pending) {
                 boolean isAI = a instanceof com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
                 if (isAI) {
                     a.setActionResponses(buildForced(a));
-                    BattleFactory.LOGGER.warn("[BattleFactory] FORCE IA (tour figé) joueur={} battleId={} forceSwitch={}",
-                            inst.challenger.getScoreboardName(), inst.currentBattleID, hasForceSwitch(a));
                     me.plascmabue.cobblemonbattlefactory.debug.BattleLog.log(
                             "FORCE IA actor='{}' forceSwitch={}", a.getName().getString(), hasForceSwitch(a));
-                } else if (playerForceSwitch && hasForceSwitch(a)) {
+                } else if (trueDoubleKO && hasForceSwitch(a)) {
                     a.setActionResponses(buildForced(a));
                     me.plascmabue.cobblemonbattlefactory.debug.BattleLog.log(
                             "FORCE JOUEUR actor='{}' (vrai double-K.O., écran non ouvert)", a.getName().getString());
+                } else {
+                    // limbo (requête de coup/switch vivante sans prompt) → RE-PROMPT, jamais forcer ses coups.
+                    reprompt(a);
+                    me.plascmabue.cobblemonbattlefactory.debug.BattleLog.log(
+                            "REPROMPT JOUEUR actor='{}' (menu fige, re-ouverture du choix)", a.getName().getString());
                 }
             }
             b.checkForInputDispatch();
@@ -238,6 +251,16 @@ int activeReq = (active != null) ? active.size() : 0;
             BattleFactory.LOGGER.error("[BattleFactory] resolveStuck a échoué : {}", t.getMessage());
             me.plascmabue.cobblemonbattlefactory.debug.BattleLog.log("resolveStuck EXCEPTION : {}", String.valueOf(t));
         }
+    }
+
+    /** Re-prompte un acteur bloqué SANS forcer son choix : re-pousse sa requête (rafraîchit les coups affichés)
+     *  puis le paquet « fais ton choix » → ré-ouvre l'écran côté joueur / re-déclenche onChoiceRequested côté IA. */
+    private static void reprompt(com.cobblemon.mod.common.api.battles.model.actor.BattleActor a) {
+        try {
+            var req = a.getRequest();
+            if (req != null) a.sendUpdate(new com.cobblemon.mod.common.net.messages.client.battle.BattleQueueRequestPacket(req));
+            a.sendUpdate(new com.cobblemon.mod.common.net.messages.client.battle.BattleMakeChoicePacket());
+        } catch (Throwable ignored) {}
     }
 
     /** Dump l'état de CHAQUE acteur (joueur + IA) dans le battle-debug.log : mustChoose, nb de réponses, et
