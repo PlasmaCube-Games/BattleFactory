@@ -224,7 +224,7 @@ int activeReq = (active != null) ? active.size() : 0;
             // Si le SEUL bloqueur est un joueur qui choisit normalement (mustChoose=true), il réfléchit → on ne
             // touche à RIEN. On n'agit que si une IA est coincée (elle répond normalement en instantané) OU si un
             // joueur est en limbo (mustChoose=false mais requête vivante = le bug du menu fight figé).
-            if (pending.isEmpty() || (!anyAiBlocker && !anyPlayerLimbo)) return;
+            if (pending.isEmpty() || (!anyAiBlocker && !anyPlayerLimbo && !playerForceSwitch)) return;
 
             // VRAI DOUBLE-K.O. = joueur ET IA ont un switch forcé → Cobblemon n'ouvre pas l'écran du joueur →
             // on force aussi son switch. KO SIMPLE (joueur forceSwitch seul, IA en wait) → JAMAIS forcer : reprompt.
@@ -243,7 +243,7 @@ int activeReq = (active != null) ? active.size() : 0;
                     a.setActionResponses(buildForced(a));
                     me.plascmabue.cobblemonbattlefactory.debug.BattleLog.log(
                             "FORCE JOUEUR actor='{}' (vrai double-K.O., écran non ouvert)", a.getName().getString());
-                } else if (limboPlayers.contains(a)) {
+                } else if (limboPlayers.contains(a) || hasForceSwitch(a)) {
                     // LIMBO uniquement (mustChoose=false) → RE-PROMPT, jamais forcer ses coups.
                     reprompt(a);
                     me.plascmabue.cobblemonbattlefactory.debug.BattleLog.log(
