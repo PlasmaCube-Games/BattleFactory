@@ -199,6 +199,10 @@ int activeReq = (active != null) ? active.size() : 0;
             // mustChoose=false responses=0 active!=null (Cobblemon n'a lancé le choix de personne). wait=true =
             // attend l'autre camp → ignoré.
             java.util.List<com.cobblemon.mod.common.api.battles.model.actor.BattleActor> pending = new ArrayList<>();
+            // Joueurs en LIMBO = requête vivante mais mustChoose=false (Cobblemon ne leur a pas ouvert le choix).
+            // Un joueur mustChoose=true a son écran OUVERT et clique normalement : il ne faut SURTOUT PAS le
+            // reprompter (ça renvoie BattleQueueRequestPacket et écrase son clic en cours → livelock « plus d'attaques »).
+            java.util.List<com.cobblemon.mod.common.api.battles.model.actor.BattleActor> limboPlayers = new ArrayList<>();
             boolean anyAiBlocker = false, anyPlayerLimbo = false;
             boolean aiForceSwitch = false, playerForceSwitch = false;
             for (var a : b.getActors()) {
@@ -215,7 +219,7 @@ int activeReq = (active != null) ? active.size() : 0;
                 try { mustChoose = a.getMustChoose(); } catch (Throwable ignored) {}
                 boolean fsw = hasForceSwitch(a);
                 if (isAI) { anyAiBlocker = true; if (fsw) aiForceSwitch = true; }
-                else { if (!mustChoose) anyPlayerLimbo = true; if (fsw) playerForceSwitch = true; }
+                else { if (!mustChoose) { anyPlayerLimbo = true; limboPlayers.add(a); } if (fsw) playerForceSwitch = true; }
             }
             // Si le SEUL bloqueur est un joueur qui choisit normalement (mustChoose=true), il réfléchit → on ne
             // touche à RIEN. On n'agit que si une IA est coincée (elle répond normalement en instantané) OU si un
@@ -239,12 +243,13 @@ int activeReq = (active != null) ? active.size() : 0;
                     a.setActionResponses(buildForced(a));
                     me.plascmabue.cobblemonbattlefactory.debug.BattleLog.log(
                             "FORCE JOUEUR actor='{}' (vrai double-K.O., écran non ouvert)", a.getName().getString());
-                } else {
-                    // limbo (requête de coup/switch vivante sans prompt) → RE-PROMPT, jamais forcer ses coups.
+                } else if (limboPlayers.contains(a)) {
+                    // LIMBO uniquement (mustChoose=false) → RE-PROMPT, jamais forcer ses coups.
                     reprompt(a);
                     me.plascmabue.cobblemonbattlefactory.debug.BattleLog.log(
                             "REPROMPT JOUEUR actor='{}' (menu fige, re-ouverture du choix)", a.getName().getString());
                 }
+                // else : joueur mustChoose=true = écran ouvert, il clique → on ne le touche PAS (sinon on écrase son clic).
             }
             b.checkForInputDispatch();
         } catch (Throwable t) {
