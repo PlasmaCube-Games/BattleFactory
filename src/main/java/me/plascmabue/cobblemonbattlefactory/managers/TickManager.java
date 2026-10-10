@@ -231,7 +231,7 @@ int activeReq = (active != null) ? active.size() : 0;
             // joueur mustChoose=true) seulement à 5 s (100 ticks). Avant (dès 2 s) on ne fait que : forcer l'IA
             // (elle doit répondre en instantané) et reprompter un joueur en LIMBO (écran fermé → sûr).
             boolean touchPlayers = n >= 100;
-            boolean actionable = anyAiBlocker || anyPlayerLimbo || (touchPlayers && playerForceSwitch);
+            boolean actionable = anyAiBlocker || anyPlayerLimbo;
             if (pending.isEmpty() || !actionable) return;
 
             // VRAI DOUBLE-K.O. = joueur ET IA ont un switch forcé → Cobblemon n'ouvre pas l'écran du joueur →
@@ -251,7 +251,7 @@ int activeReq = (active != null) ? active.size() : 0;
                     a.setActionResponses(buildForced(a));
                     me.plascmabue.cobblemonbattlefactory.debug.BattleLog.log(
                             "FORCE JOUEUR actor='{}' (vrai double-K.O., écran non ouvert)", a.getName().getString());
-                } else if (limboPlayers.contains(a) || (touchPlayers && hasForceSwitch(a))) {
+                } else if (limboPlayers.contains(a)) {
                     // LIMBO (mustChoose=false, écran fermé) → reprompt dès 2 s ; joueur mustChoose=true en switch
                     // forcé (KO, écran cassé) → reprompt seulement à 5 s. Jamais forcer ses coups.
                     reprompt(a);
