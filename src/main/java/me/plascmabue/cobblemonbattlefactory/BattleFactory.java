@@ -78,6 +78,8 @@ implements ModInitializer {
 
     public void onInitialize() {
         INSTANCE = this;
+        LOGGER.info("[BattleFactory] BUILD 2026-10-10d reprompt-limbo-only");
+        try { me.plascmabue.cobblemonbattlefactory.debug.BattleLog.log("BUILD 2026-10-10d reprompt-limbo-only"); } catch (Throwable ignored) {}
         this.rct = com.gitlab.srcmc.rctapi.api.RCTApi.initInstance(MOD_ID);
         LOGGER.info("[BattleFactory] RCTApi instance initialized for mod id {}", MOD_ID);
         PayloadTypeRegistry.playS2C().register(BattleFactoryHudPayload.TYPE, BattleFactoryHudPayload.STREAM_CODEC);
