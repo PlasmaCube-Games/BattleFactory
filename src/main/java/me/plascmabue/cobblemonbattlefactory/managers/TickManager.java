@@ -83,13 +83,16 @@ TickManager {
                         if (battleFactoryInstance.aiStuckTicks == 80) {
                             dumpStuckState(b);   // diagnostic (tour figé depuis 4 s)
                         }
-                        // À partir de 5 s de tour figé (100 ticks), toutes les 2 s (40 ticks) : on pousse.
-                        if (battleFactoryInstance.aiStuckTicks == 100
-                                || (battleFactoryInstance.aiStuckTicks > 100 && battleFactoryInstance.aiStuckTicks % 40 == 0)) {
+                        // Dès 2 s (40 ticks) puis chaque 1 s (20 ticks) : on pousse. resolveStuck force l'IA tôt
+                        // (elle devrait répondre en instantané → 5 s de latence/tour sinon) et reprompte les
+                        // joueurs en limbo (écran fermé, sûr) ; les actions sensibles (switch forcé / joueur
+                        // mustChoose=true) n'arrivent qu'à partir de 100 ticks (5 s).
+                        int st = battleFactoryInstance.aiStuckTicks;
+                        if (st >= 40 && st % 20 == 0) {
                             me.plascmabue.cobblemonbattlefactory.debug.BattleLog.log(
                                     "WATCHDOG tour figé {}t battleId={} — poussée du combat",
-                                    battleFactoryInstance.aiStuckTicks, battleFactoryInstance.currentBattleID);
-                            resolveStuck(battleFactoryInstance, b);
+                                    st, battleFactoryInstance.currentBattleID);
+                            resolveStuck(battleFactoryInstance, b, st);
                         }
                     }
                 }
@@ -192,7 +195,7 @@ int activeReq = (active != null) ? active.size() : 0;
      *  doit choisir (KO normal / tour normal) → on ne touche à RIEN. On n'agit que sur un vrai double-K.O.
      *  On reconstruit {@code setMustChoose(true)} sur les acteurs en attente (sinon forcer l'IA seule
      *  dispatcherait aussitôt et annulerait la requête du joueur), puis on force SEULEMENT l'IA. */
-    private static void resolveStuck(BattleFactoryInstance inst, com.cobblemon.mod.common.api.battles.model.PokemonBattle b) {
+    private static void resolveStuck(BattleFactoryInstance inst, com.cobblemon.mod.common.api.battles.model.PokemonBattle b, int n) {
         try {
             // « Bloqueur » = acteur avec une requête VIVANTE (non-wait) et aucune réponse posée. On détecte par la
             // REQUÊTE, PAS par mustChoose : le deadlock « menu fight mais impossible d'attaquer » a les DEUX camps
@@ -224,7 +227,12 @@ int activeReq = (active != null) ? active.size() : 0;
             // Si le SEUL bloqueur est un joueur qui choisit normalement (mustChoose=true), il réfléchit → on ne
             // touche à RIEN. On n'agit que si une IA est coincée (elle répond normalement en instantané) OU si un
             // joueur est en limbo (mustChoose=false mais requête vivante = le bug du menu fight figé).
-            if (pending.isEmpty() || (!anyAiBlocker && !anyPlayerLimbo && !playerForceSwitch)) return;
+            // touchPlayers = on autorise les actions SENSIBLES sur le joueur (switch forcé auto / reprompt d'un
+            // joueur mustChoose=true) seulement à 5 s (100 ticks). Avant (dès 2 s) on ne fait que : forcer l'IA
+            // (elle doit répondre en instantané) et reprompter un joueur en LIMBO (écran fermé → sûr).
+            boolean touchPlayers = n >= 100;
+            boolean actionable = anyAiBlocker || anyPlayerLimbo || (touchPlayers && playerForceSwitch);
+            if (pending.isEmpty() || !actionable) return;
 
             // VRAI DOUBLE-K.O. = joueur ET IA ont un switch forcé → Cobblemon n'ouvre pas l'écran du joueur →
             // on force aussi son switch. KO SIMPLE (joueur forceSwitch seul, IA en wait) → JAMAIS forcer : reprompt.
@@ -239,17 +247,18 @@ int activeReq = (active != null) ? active.size() : 0;
                     a.setActionResponses(buildForced(a));
                     me.plascmabue.cobblemonbattlefactory.debug.BattleLog.log(
                             "FORCE IA actor='{}' forceSwitch={}", a.getName().getString(), hasForceSwitch(a));
-                } else if (trueDoubleKO && hasForceSwitch(a)) {
+                } else if (touchPlayers && trueDoubleKO && hasForceSwitch(a)) {
                     a.setActionResponses(buildForced(a));
                     me.plascmabue.cobblemonbattlefactory.debug.BattleLog.log(
                             "FORCE JOUEUR actor='{}' (vrai double-K.O., écran non ouvert)", a.getName().getString());
-                } else if (limboPlayers.contains(a) || hasForceSwitch(a)) {
-                    // LIMBO uniquement (mustChoose=false) → RE-PROMPT, jamais forcer ses coups.
+                } else if (limboPlayers.contains(a) || (touchPlayers && hasForceSwitch(a))) {
+                    // LIMBO (mustChoose=false, écran fermé) → reprompt dès 2 s ; joueur mustChoose=true en switch
+                    // forcé (KO, écran cassé) → reprompt seulement à 5 s. Jamais forcer ses coups.
                     reprompt(a);
                     me.plascmabue.cobblemonbattlefactory.debug.BattleLog.log(
                             "REPROMPT JOUEUR actor='{}' (menu fige, re-ouverture du choix)", a.getName().getString());
                 }
-                // else : joueur mustChoose=true = écran ouvert, il clique → on ne le touche PAS (sinon on écrase son clic).
+                // else : joueur mustChoose=true sans KO = écran ouvert, il clique → on ne le touche PAS.
             }
             b.checkForInputDispatch();
         } catch (Throwable t) {
